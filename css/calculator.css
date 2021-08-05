@@ -6,18 +6,21 @@
 
 body{
     position: relative;
+    background-color: rgb(106, 104, 248); 
 }
 
 .container{
-    background-color: lightgreen;
+    color: white;
+    padding-bottom: 100px;
 }
 
 .bottoni_calc button{
-    background-color: rgb(122, 6, 113);
+    background-color: rgb(0, 35, 151);
     color: white;
     text-transform: uppercase;
     padding: 5px 15px;
     border-radius: 20px;
+    margin-top: 5px;
 }
 
 input:focus{
@@ -27,7 +30,11 @@ input:focus{
 input{
     padding-left: 15px;
     width: 90%;
+    color: black;
 }
+
+
+
 
 h2{
     text-transform: uppercase;
@@ -39,16 +46,14 @@ h3{
     text-align: center;
 }
 
-.tempo_giro{
-    width: 100%;
-    background-color: red;
-}
+/* .tempo_giro{ */
+    /* width: 100%; */
+/* } */
 
 
-.durata_gara{
+/* .durata_gara{
     width: 100%;
-    background-color: violet;
-}
+} */
 
 .bottoni{
     margin-top: 15px;
@@ -60,20 +65,20 @@ h3{
 
 #calcola{
     padding: 10px;
-    width: 100%;
-    background-color: rgba(88, 95, 233, 0.5);
-    border: 2px solid rgba(88, 95, 233, 0.5);
+    width: 80%;
+    background-color: rgba(88, 233, 95, 0.5);
+    border: 2px solid rgba(88, 233, 95, 0.5);
     color: white;
     border-radius: 15px;
     margin-top: 5px;
 }
 #calcola:hover{
-    background-color: blue;
+    background-color: green;
 }
 
 #reset{
     padding: 10px;
-    width: 100%;
+    width: 80%;
     background-color: rgba(235,35,45,0.5);
     border: 2px solid rgba(235,35,45,0.5);
     color: white;
@@ -96,15 +101,13 @@ h3{
     font-size: 200%;
     text-transform: uppercase;
     margin-top: 5px;
-    background-color: rgb(129, 134, 197);
 }
 
-
-
 footer{
-    width: 100%;
+    width: 80%;
     position: fixed;
     bottom: 5px;
+    background-color: red;
 }
 
 
