@@ -1,3 +1,4 @@
+/**************** CSS INDEX.HTML ************/
 *{
     margin: 0 auto;
     padding: 0;
@@ -10,6 +11,13 @@
     color: white;
     height: 250px;
 }
+
+
+.login{
+    text-align: right;
+}
+
+
 
 h1{
     text-align: center;

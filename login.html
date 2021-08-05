@@ -8,29 +8,31 @@
     <title>Login</title>
 </head>
 <body>
-    <div class="login">    
-        <form id="login" method="get" action="login.php">    
+    <form id="form_id" method="post" name="myform">
+        <div class="login">    
             <label>
                 <p>
                     <strong>UserName</strong>      
                 </p>    
             </label>    
             
-            <input type="text" name="name" id="name" placeholder="Username">       
+            <input type="text" name="username" id="username" placeholder="Username">       
             <label>
                 <p>
                     <strong>Password</strong>     
                 </p>    
             </label>    
-            <input type="Password" name="pass" id="pass" placeholder="Password">       
-            <input type="button" name="log" id="log" value="Log In">             
-        </form>    
-        <div class="discord">
-            <a href="#">inserire link</a>
-        </div>
+            <input type="Password" name="password" id="password" placeholder="Password">       
+            <input type="button" value="Login" id="submit" onclick="validate()"/>            
+            <div class="discord">
+                <a href="#">inserire link</a>
+            </div>
     </div>  
+    </form>
     <footer>
         <h3>powered by</h3>
     </footer>
+        
+        <script src="js/login.js"></script>
 </body>
 </html> 
