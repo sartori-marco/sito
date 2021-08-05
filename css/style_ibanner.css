@@ -1,0 +1,17 @@
+*{
+    margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    width: 80%;
+    background-color: lightgreen;
+    display: flex;
+}
+
+
+#banner1{
+    width: 710px;
+    height: 42px;
+}

@@ -1,0 +1,112 @@
+*{
+    margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    position: relative;
+}
+
+.container{
+    
+    background-color: lightgreen;
+}
+
+input:focus{
+    background-color: rgb(206, 248, 253);
+}
+
+input{
+    padding-left: 15px;
+    width: 90%;
+}
+
+h2{
+    text-transform: uppercase;
+    text-align: center;
+}
+
+h3{
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.tempo_giro{
+    width: 100%;
+    background-color: red;
+}
+
+
+.durata_gara{
+    width: 100%;
+    background-color: violet;
+}
+
+.bottoni{
+    /* background-color: red; */
+    margin-top: 15px;
+    text-align: center;
+}
+
+
+
+
+#calcola{
+    padding: 10px;
+    width: 100%;
+    background-color: rgba(88, 95, 233, 0.5);
+    border: 2px solid rgba(88, 95, 233, 0.5);
+    color: white;
+    border-radius: 15px;
+    margin-top: 5px;
+}
+#calcola:hover{
+    background-color: blue;
+}
+
+#reset{
+    padding: 10px;
+    width: 100%;
+    background-color: rgba(235,35,45,0.5);
+    border: 2px solid rgba(235,35,45,0.5);
+    color: white;
+    border-radius: 15px;
+    margin-top: 5px;
+}
+#reset:hover{
+    background-color: red;
+}
+
+.risultati{
+    text-align: center;
+    
+}
+.risultati input{
+    width: 50%;
+}
+
+#risultato, #risultato2{
+    font-size: 200%;
+    text-transform: uppercase;
+    margin-top: 5px;
+    background-color: rgb(129, 134, 197);
+}
+
+
+
+footer{
+    width: 100%;
+    position: fixed;
+    bottom: 5px;
+}
+
+
+
+
+
+/* @media screen and (max-width: 610px){
+    .box{
+        flex-basis: 30%;
+    }
+} */

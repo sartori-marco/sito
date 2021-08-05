@@ -1,0 +1,105 @@
+*{
+    margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: 'Arial';  
+	/* background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab); */
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+.login{  
+    width: 500px;  
+    padding: 70px 90px;  
+    margin-top: 50px;
+    background: #1b517f;  
+    border-radius: 15px; 
+    position: relative;
+}  
+
+h2{  
+    text-align: center;  
+    color: #1b517f;  
+    padding: 20px;  
+}  
+
+label{  
+    color: #08ffd1;  
+    font-size: 17px;  
+}  
+
+p{
+    font-size: 17px;
+}
+
+#name{  
+    width: 300px;  
+    height: 30px;  
+    border: none;  
+    border-radius: 3px;  
+    padding-left: 8px;  
+    margin: 10px 0;
+}  
+
+
+
+
+#pass{  
+    width: 300px;  
+    height: 30px;  
+    border: none;  
+    border-radius: 3px;  
+    padding-left: 8px; 
+    margin: 10px 0; 
+}  
+
+#log{  
+    width: 300px;  
+    height: 30px;  
+    margin-top: 10px;
+    border: none;  
+    border-radius: 17px;    
+    color: #1b517f; 
+    cursor: pointer;
+    text-transform: uppercase;
+}  
+
+#log:hover{
+    color: white;
+    /* background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab); */
+    background-color: #1b517f;
+    border: 1px solid white;
+	background-size: 110% 110%;
+	animation: gradient 15s ease infinite;
+}
+
+.discord{
+    margin-top: 50px;
+    text-align: center;
+}
+
+footer{
+    position: fixed;
+    width: 100%;
+    bottom: 20px;
+}
+
+footer h3{
+    text-align: center;
+}
