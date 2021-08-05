@@ -11,9 +11,14 @@
     height: 250px;
 }
 
+h1{
+    text-align: center;
+    text-transform: uppercase;
+}
+
 .box{
     /* width: calc(100% / 3); */
     height: 100px;
-    background-color: red;
+    background-color: rgb(223, 158, 158);
     margin-top: 5px;
 }
