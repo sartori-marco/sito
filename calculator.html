@@ -14,99 +14,113 @@
 </head>
 <body>
     <div class="container">
-        <div class="row">
-            <h2>Fuel calculator per laps</h2>
-        </div>
-
-
-        <div class="row">
-            <h3>Race laps and fuel</h3>
-        </div>
-        <div class="row durata_gara">
-            <div class="col-xs-12 col-sm-6">
-                <label for="">Laps</label>
-                <br>
-                <input type="number" id="racelaps">
-            </div>
-            <div class="col-xs-12 col-sm-6">
-                <label for="">Fuel consuption per lap</label>
-                <br>
-                <input type="number" id="fuellaps">
-            </div>
-        </div>
-        <!-- END DURATA GARA -->
-        <div class="row bottoni">
+        <div class="bottoni_calc">
             <div class="row">
-                <div class="col-xs-12 col-sm-6">
-                    <button id="calcola" onclick="calculatorLaps()">CALCULATE</button>
-                </div>
-                <div class="col-xs-12 col-sm-6">
-                    <button id="reset" onclick="resetLaps()">RESET</button>
-                </div>
-            </div>
-        </div>
-        <!-- END BOTTONI -->
-        <div class="row risultati">
-            <span id="risultato">
-                
-            </span>
-        </div>
-        <!-- END RISULTATO -->
-        <div class="row">
-            <h2>Fuel calculator per time</h2>
-        </div>
-        <div class="row">
-            <h3>Laptime</h3>
-        </div>
-        <div class="tempo_giro">
-            <div class="row">
-                <div class="col-xs-12 col-sm-4">
-                        <label for="">Minutes</label>
-                        <br>
-                        <input type="number" id="minuti">
-                </div>
-                <div class="col-xs-12 col-sm-4">
-                        <label for="">Secondi</label>
-                        <br>
-                        <input type="number" id="secondi">
-                </div>
-                <div class="col-xs-12 col-sm-4">
-                        <label for="">Millisecondi</label>
-                        <br>
-                        <input type="number" id="millisecondi">
+                <div class="col-xs-12">
+                    <button onclick="clickLaps()">Laps</button>
+                    <button onclick="clickTime()">Time</button>
                 </div>
             </div>
             <!-- END ROW -->
         </div>
-        <!--------------------- END TEMPO_GIRO -->
-        <div class="row">
-            <div class="col-xs-12 col-sm-6">
-                <label for="">Race length in minutes</label>
-                <br>
-                <input type="number" id="raceminutes">
+        <!-- END BOTTONI CALC -->
+        <div id="calc_laps">
+            <div class="row">
+                <h2>Fuel calculator per laps</h2>
             </div>
-            <div class="col-xs-12 col-sm-6">
-                <label for="">Fuel consuption per lap</label>
-                <br>
-                <input type="number" id="fuellaps2">
+            <div class="row">
+                <h3>Race laps and fuel</h3>
             </div>
-        </div>
-        <!-- / ROW -->
+            <div class="row durata_gara">
+                <div class="col-xs-12 col-sm-6">
+                    <label for="">Laps</label>
+                    <br>
+                    <input type="number" id="racelaps">
+                </div>
+                <div class="col-xs-12 col-sm-6">
+                    <label for="">Fuel consuption per lap</label>
+                    <br>
+                    <input type="number" id="fuellaps">
+                </div>
+            </div>
+            <!-- END DURATA GARA -->
             <div class="row bottoni">
                 <div class="row">
                     <div class="col-xs-12 col-sm-6">
-                        <button id="calcola" onclick="calculatorLength()">CALCULATE</button>
+                        <button id="calcola" onclick="calculatorLaps()">CALCULATE</button>
                     </div>
                     <div class="col-xs-12 col-sm-6">
-                        <button id="reset" onclick="resetTime()">RESET</button>
+                        <button id="reset" onclick="resetLaps()">RESET</button>
                     </div>
                 </div>
             </div>
+            <!-- END BOTTONI -->
             <div class="row risultati">
-                <span id="risultato2">
+                <span id="risultato">
                     
                 </span>
             </div>
+            <!-- END RISULTATO -->
+        </div>
+        <!-- END DIV CALC LAPS -->
+        <div id="calc_time">
+            <div class="row">
+                <h2>Fuel calculator per time</h2>
+            </div>
+            <div class="row">
+                <h3>Laptime</h3>
+            </div>
+            <div class="tempo_giro">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-4">
+                            <label for="">Minutes</label>
+                            <br>
+                            <input type="number" id="minuti">
+                    </div>
+                    <div class="col-xs-12 col-sm-4">
+                            <label for="">Secondi</label>
+                            <br>
+                            <input type="number" id="secondi">
+                    </div>
+                    <div class="col-xs-12 col-sm-4">
+                            <label for="">Millisecondi</label>
+                            <br>
+                            <input type="number" id="millisecondi">
+                    </div>
+                </div>
+                <!-- END ROW -->
+            </div>
+            <!--------------------- END TEMPO_GIRO -->
+            <div class="row">
+                <div class="col-xs-12 col-sm-6">
+                    <label for="">Race length in minutes</label>
+                    <br>
+                    <input type="number" id="raceminutes">
+                </div>
+                <div class="col-xs-12 col-sm-6">
+                    <label for="">Fuel consuption per lap</label>
+                    <br>
+                    <input type="number" id="fuellaps2">
+                </div>
+            </div>
+            <!-- / ROW -->
+                <div class="row bottoni">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-6">
+                            <button id="calcola" onclick="calculatorLength()">CALCULATE</button>
+                        </div>
+                        <div class="col-xs-12 col-sm-6">
+                            <button id="reset" onclick="resetTime()">RESET</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="row risultati">
+                    <span id="risultato2">
+                        
+                    </span>
+                </div>
+        </div>
+        <!-- END DIV CALC TIME -->
     </div>
     <!-- END CONTAINER -->
 

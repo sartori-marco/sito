@@ -9,8 +9,15 @@ body{
 }
 
 .container{
-    
     background-color: lightgreen;
+}
+
+.bottoni_calc button{
+    background-color: rgb(122, 6, 113);
+    color: white;
+    text-transform: uppercase;
+    padding: 5px 15px;
+    border-radius: 20px;
 }
 
 input:focus{
@@ -44,7 +51,6 @@ h3{
 }
 
 .bottoni{
-    /* background-color: red; */
     margin-top: 15px;
     text-align: center;
 }
