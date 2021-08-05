@@ -1,0 +1,23 @@
+*{
+    margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.home{
+    text-transform: uppercase;
+    background-color: red;
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.home:hover{
+    text-decoration: none;
+    color: red;
+    background-color: white;
+}
+
+.top_15{
+    margin-top: 15px;
+}
