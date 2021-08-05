@@ -17,8 +17,10 @@ h1{
 
 
 
-#banner1{
-    width: 710px;
-    height: 42px;
-    margin-top: 50px;
+#banner{
+    margin-top: 5px;
+}
+
+.risultati{
+    background-color: rgb(107, 96, 96);
 }
