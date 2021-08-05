@@ -7,11 +7,18 @@
 .container{
     width: 80%;
     background-color: lightgreen;
-    display: flex;
 }
+
+
+h1{
+    text-align: center;
+    text-transform: uppercase;
+}
+
 
 
 #banner1{
     width: 710px;
     height: 42px;
+    margin-top: 50px;
 }
