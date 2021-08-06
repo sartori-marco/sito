@@ -5,3 +5,4 @@
 5) Footer
 6) News, blog?, video?
 7) sfondo
+8) text-centre alla tabella
