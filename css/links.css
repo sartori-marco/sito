@@ -30,6 +30,11 @@ body{
 }
 
 
+.logo img{
+    width: 900px;
+    height: 150px;
+}
+
 h1{
     text-transform: uppercase;
     margin-bottom: 30px;
