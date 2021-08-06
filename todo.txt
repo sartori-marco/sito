@@ -1,1 +1,5 @@
 1) Pagina link, pulsante scroll su, animazione, e comparsa solo allo scroll giu.
+2) Modificare fuel calc con un'unica formula per giri/tempo
+3) Impaginare fuel calc
+4) Cambiare immagini tasti home page
+5) Footer
