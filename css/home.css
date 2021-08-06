@@ -23,12 +23,6 @@ h1{
     text-transform: uppercase;
 }
 
-.box{
-    /* width: calc(100% / 3); */
-    height: 100px;
-    background-color: rgb(223, 158, 158);
-    margin-top: 5px;
-}
 
 .news{
     height: 80px;
