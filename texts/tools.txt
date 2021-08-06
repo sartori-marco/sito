@@ -1,0 +1,34 @@
+Crewchief – free - https://thecrewchief.org/
+Non riuscirete più a fare a meno del vostro ingegnere di pista! Crewchief è non solo uno spotter, ma un vero e proprio ingegnere di pista che vi comunicherà tempi, benzina, vi terrà concentrati durante la gara e vi aiuterà nelle fasi di sorpasso. Funziona con quasi tutti i racingsims disponibili, la versione base è in inglese ma è disponibile la localizzazione in italiano (purtroppo non perfetta). Oltretutto Crewchief è altamente personalizzabile a seconda delle proprie esigenze!
+
+Simhub – free - https://www.simhubdash.com/
+Simhub ha un’infinità di funzioni. Potete usarlo per creare o scaricare degli overlay in gioco, usarlo come finestra in un secondo desktop o in un display su volante, telefono, ovunque! Ci sono tantissime risorse sul web disponibili. Simhub può anche controllare un arduino a cui potete collegare led, display, tasti, qualsiasi cosa vi venga in mente. Può anche controllare i motorini per aggiungere la vibrazione alla vostra postazione di guida!
+Simhub è fondamentalmente gratis ma con una piccola donazione di pochi euro potete rimuovere la loading screen e usare arduino con più fps, oltre che finanziare un ottimo progetto!
+
+Trading Paints – free - https://www.tradingpaints.com
+iRacing purtroppo non eccelle sulle livree e la personalizzazione vetture, ma qui viene in vostro aiuto Trading Paints! Prima che ve lo chiediate è usato dal 99% degli utenti iRacing ed è sicurissimo!
+Trading Paints si collega al vostro account, tramite il sito potete scegliere tra migliaia di livree dalle più serie alle più buffe e tramite un minuscolo software da lasciare in esecuzione durante il gioco vengono scaricate tutte le livree delle auto in gioco. Fondamentale.
+
+Racelab – base free - pro 40€/anno - https://racelab.app/
+Gli overlay su iRacing sono fondamentali e Racelab ne offre di ottima qualità! Avrete visto sicuramente Racelab usato da diversi youtuber! La versione base free offre classifiche relative e non, fuel calculator, un pannello con rpm marce e speed e altre chicche, parzialmente personalizzabili. Con la versione pro ovviamente si sblocca ogni overlay ed ogni tipo di personalizzazione. Graficamente eccellente!
+
+Kapps – 2$ al mese – free con amazon prime - https://kapps.kutu.ru/
+Kapps è un altro ottimo fornitore di overlay. Classifiche, fuel calc, input telemetry, mappa, e tutto quello che volete altamente personalizzabile. Kapps nasce a pagamento, ma con Amazon prime facendo una sub ogni mese al loro canale Twitch diventa free.
+
+irFFB + vjoy – free- https://github.com/nlp80/irFFB/wiki https://sourceforge.net/projects/vjoystick/
+Questa coppia di software vi permette di migliorare nettamente la vostra esperienza iRacing con diverse migliorie riguardo al FFB. Purtroppo il nostro sim non eccelle da questo punto di vista, e irFFB vi permette di migliorare la qualità del FFB ed inserire alcuni “effetti” non presenti nel gioco. Sovrasterzo e sottosterzo saranno molto più gestibili e la vostra esperienza di gioco migliorerà nettamente.
+
+United telemetry data – free beta - https://www.unitedracingdata.com/
+Una telemetria a portata di tutti, ancora in fase beta quindi alcune funzioni potrebbero diventare a pagamento in futuro. Scaricate il software e lasciatelo in esecuzione, attivate la telemetria durante i vostri giri (alt+L di default), e la telemetria verrà registrata.
+Successivamente potrete analizzare i vostri giri migliori e compararli con quelli di altri piloti e dei vostri amici. Interfaccia semplice ed intuitiva, vi permetterà di limare molto dai vostri tempi!
+
+iRacing Manager – free - https://members.iracing.com/jforum/posts/list/3633292.page
+Siete stufi di avviare decine di applicazioni prima di giocare? Questa piccola ma fondamentale app vi aiuterà aprendo e chiudendo ogni programma che vi serve, se volete apertura e chiusura automatica con iRacing, partenza minimizzata e delay di apertura. Utilissimo.
+
+
+
+
+
+
+
+
