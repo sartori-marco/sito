@@ -31,4 +31,19 @@ body{
 
 h1{
     text-transform: uppercase;
+    margin-bottom: 30px;
+}
+
+h3 a{
+    text-transform: uppercase;
+    color: white;
+}
+
+h3 a:hover{
+    color: white;
+}
+
+img{
+    width: 500px;
+    height: 300px;
 }
