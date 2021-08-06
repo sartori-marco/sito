@@ -30,10 +30,7 @@ body{
 }
 
 
-.logo img{
-    width: 900px;
-    height: 150px;
-}
+
 
 h1{
     text-transform: uppercase;
@@ -53,9 +50,13 @@ h3 a:hover{
     color: white;
 }
 
-img{
+/* img{
     width: 500px;
     height: 300px;
+} */
+
+p{
+    margin-top: 30px;
 }
 
 .on_start a{
@@ -64,14 +65,13 @@ img{
     right: 50px;
     background-color: red;
     color: white;
-    padding: 10px 20px;
+    padding: 15px 20px;
     border-radius: 50%;
 }
 
 .on_start i{
     font-size: 20px;
-    line-height: 1.5;
-    padding-top: 5px;
+    
 }
 
 
