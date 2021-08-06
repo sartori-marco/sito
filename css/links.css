@@ -7,6 +7,7 @@
 body{
     background-color: rgb(106, 104, 248);
     color: white; 
+    position: relative;
 }
 
 
@@ -39,6 +40,10 @@ h3 a{
     color: white;
 }
 
+h3, h5{
+    text-align: center;
+}
+
 h3 a:hover{
     color: white;
 }
@@ -46,4 +51,28 @@ h3 a:hover{
 img{
     width: 500px;
     height: 300px;
+}
+
+.on_start a{
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+    background-color: red;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 50%;
+}
+
+.on_start i{
+    font-size: 20px;
+    line-height: 1.5;
+    padding-top: 5px;
+}
+
+
+
+
+footer{
+    height: 50px;
+    background-color: green;
 }
