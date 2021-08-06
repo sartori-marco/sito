@@ -4,6 +4,12 @@
     box-sizing: border-box;
 }
 
+body{
+    background-color: rgb(106, 104, 248);
+    color: white; 
+}
+
+
 .home{
     text-transform: uppercase;
     background-color: red;

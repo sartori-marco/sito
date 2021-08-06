@@ -1,3 +1,15 @@
+*{
+    margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: rgb(106, 104, 248);
+    color: white; 
+}
+
+
 .home{
     text-transform: uppercase;
     background-color: red;
@@ -14,4 +26,9 @@
 
 .top_15{
     margin-top: 15px;
+}
+
+
+h1{
+    text-transform: uppercase;
 }

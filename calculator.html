@@ -13,10 +13,13 @@
     <title>Fuel Calculator</title>
 </head>
 <body>
-    <div class="container">
+    <div class="container text-center">
         <div class="bottoni_calc">
             <div class="row">
-                <div class="col-xs-12">
+                <div class="col-xs-6 text-right ">
+                    <p class="top_pd_15">Seleziona il tipo di gara</p>
+                </div>
+                <div class="col-xs-6 text-left">
                     <button onclick="clickLaps()">Laps</button>
                     <button onclick="clickTime()">Time</button>
                 </div>
@@ -60,9 +63,11 @@
             </div>
             <!-- END BOTTONI -->
             <div class="row risultati">
-                <span id="risultato">
+                <div class="col-xs-12">
+                    <span id="risultato">
                     
-                </span>
+                    </span>
+                </div>
             </div>
             <!-- END RISULTATO -->
         </div>
@@ -82,12 +87,12 @@
                             <input type="number" id="minuti">
                     </div>
                     <div class="col-xs-12 col-sm-4">
-                            <label for="">Secondi</label>
+                            <label for="">Seconds</label>
                             <br>
                             <input type="number" id="secondi">
                     </div>
                     <div class="col-xs-12 col-sm-4">
-                            <label for="">Millisecondi</label>
+                            <label for="">Milliseconds</label>
                             <br>
                             <input type="number" id="millisecondi">
                     </div>
@@ -119,9 +124,11 @@
                     </div>
                 </div>
                 <div class="row risultati">
-                    <span id="risultato2">
+                    <div class="col-xs-12">
+                        <span id="risultato2">
                         
-                    </span>
+                        </span>
+                    </div>
                 </div>
         </div>
         <!-- END DIV CALC TIME -->
