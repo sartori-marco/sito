@@ -3,3 +3,5 @@
 3) Impaginare fuel calc
 4) Cambiare immagini tasti home page
 5) Footer
+6) News, blog?, video?
+7) sfondo
