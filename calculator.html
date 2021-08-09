@@ -22,24 +22,55 @@
         <!-- END BOTTONI CALC -->
 
         <div id="calc_time">
-            <h3>per length</h3>
+            <h3>per time</h3>
             <div class="row">
                 <div class="col-xs-12">
                     <label for="">Race Length</label>
-                    <input type="text">
+                    <input type="number" id="race_length">
                 </div>
             </div>
             <!-- END ROW -->
             <div class="row">
                 <div class="col-xs-12">
                     <label for="">LapTime</label>
-                    <input type="text" placeholder="Minutes">
-                    <input type="text">
-                    <input type="text">
+                    <input type="number" id="minuti" placeholder="Minutes">
+                    <input type="number" id="secondi" placeholder="Seconds">
+                    <input type="number" id="millisecondi" placeholder="Milliseconds">
                 </div>
             </div>
+            <!-- END ROW -->
+            <div class="row">
+                <div class="col-xs-12">
+                    <label for="">Fuel per Lap</label>
+                    <input type="number" id="fuel_laps">
+                </div>
+            </div>
+            <!-- END ROW -->
+            <div class="row">
+                <div class="col-xs-12">
+                    <label for="">Tank Capacity</label>
+                    <input type="number" id="tank_capacity">
+                </div>
+            </div>
+            <!-- END ROW -->
         </div>
         <!-- END DIV CALC TIME -->
+        <div class="row">
+            <h2 id="risultato_fuel"></h2>
+        </div>
+        <div class="row">
+            <h2 id="fuel_safe"></h2>
+        </div>
+        <div class="row">
+            <h2 id="stints"></h2>
+        </div>
+        <div class="row">
+            <h2 id="last_stint"></h2>
+        </div>
+        <div class="row">
+            <h2 id="race_duration"></h2>
+        </div>
+        
 
         <div id="calc_laps">
             <h3>per laps</h3>
@@ -48,7 +79,15 @@
         <!-- END DIV CALC LAPS -->
 
 
-
+        <div class="row bottoni">
+            <div class="col-xs-12 col-sm-6">
+                <button id="calcola" onclick="calculatorLength()">calcola</button>
+            </div>
+            <div class="col-xs-12 col-sm-6">
+                <button id="reset" onclick="resetTime()">reset</button>
+            </div>
+        </div>
+        <!-- END ROW BOTTONI CALCOLA -->
 
 
 
