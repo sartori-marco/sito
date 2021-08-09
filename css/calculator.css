@@ -6,7 +6,15 @@
 
 body{
     position: relative;
-    background-color: rgb(106, 104, 248); 
+    background-color: hsla(0, 0%, 33%, 1);
+
+    background: linear-gradient(180deg, hsla(0, 0%, 33%, 1) 0%, hsla(0, 0%, 63%, 1) 100%);
+    
+    background: -moz-linear-gradient(180deg, hsla(0, 0%, 33%, 1) 0%, hsla(0, 0%, 63%, 1) 100%);
+    
+    background: -webkit-linear-gradient(180deg, hsla(0, 0%, 33%, 1) 0%, hsla(0, 0%, 63%, 1) 100%);
+    
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#535353", endColorstr="#A1A1A1", GradientType=1 );
 }
 
 .container{
@@ -20,9 +28,8 @@ body{
 }
 
 .wd_15{
-    width: 15%;
+    width: 10%;
 }
-
 
 .uppercase{
     text-transform: uppercase;
@@ -79,6 +86,7 @@ h1,h2,h3{
     color: white;
     border-radius: 15px;
     margin-top: 5px;
+    text-transform: uppercase;
 }
 #calcola:hover{
     background-color: green;
@@ -92,6 +100,7 @@ h1,h2,h3{
     color: white;
     border-radius: 15px;
     margin-top: 5px;
+    text-transform: uppercase;
 }
 #reset:hover{
     background-color: red;
