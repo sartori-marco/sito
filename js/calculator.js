@@ -39,7 +39,7 @@ function calculatorLength(){
     // CALCOLO STINTS
     // var rf = document.getElementById("risultato_fuel").value;
     var tc = document.getElementById("tank_capacity").value;
-    var stints = risSafe / tc + +1;
+    var stints = Math.floor(risSafe / tc + +1);
     // RISULTATO STINTS
     document.getElementById("stints").innerHTML = 'Stints: ' + Math.floor(stints);
 
