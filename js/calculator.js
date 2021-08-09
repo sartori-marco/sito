@@ -13,6 +13,12 @@ function clickLength(){
 
 //***************/ CALCOLO FUEL PER TEMPO DI GARA**************
 function calculatorLength(){
+    // CALCOLO DELLA GARA IN SECONDI
+    var rah = document.getElementById("race_hr").value;
+    var ram = document.getElementById("race_min").value;
+    
+    var rm = rah * 3600 + +ram * 60;
+
     // CALCOLO DEL TEMPO IN SECONDI
     var m = document.getElementById("minuti").value;
     var s = document.getElementById("secondi").value;
@@ -23,10 +29,10 @@ function calculatorLength(){
     console.log(time);
 
     // CALCOLO BENZINA
-    var rm = document.getElementById("race_length").value;
+    // var rm = document.getElementById("race_length").value;
     var fl = document.getElementById("fuel_laps").value;
 
-    var rislength = rm * 60 / time * fl;
+    var rislength = rm / time * fl;
 
     // RISULTATO BENZINA A GIRO
     document.getElementById("risultato_fuel").innerHTML = 'Fuel needed: ' + rislength.toFixed(2)  + ' ' + 'liters';
@@ -45,9 +51,8 @@ function calculatorLength(){
 
     // CALCOLO ULTIMO STINT
     var lastStint = risSafe - (tc * (stints - 1));
-    // document.getElementById("last_stint").innerHTML = 'Last stint: ' + lastStint.toFixed(0);
-    // document.getElementById("last_stint").innerHTML = 'Last stint: ' + Math.floor(lastStint);
-    document.getElementById("last_stint").innerHTML = 'Last stint: ' + lastStint;
+    document.getElementById("last_stint").innerHTML = 'Last stint: ' + Math.floor(lastStint);
+
 
     // CALCOLO DURATA GARA
     var durata = rm / time;
