@@ -11,6 +11,16 @@ function clickLength(){
 }
 
 
+
+// //*******************/ON ENTER CALCOLO FUEL PER TEMPO DI GARA**********
+var input = document.getElementById("tank_capacity");
+input.addEventListener("keyup", function(event) {
+    if (event.keyCode === 13) {
+        calculatorLength();
+    }
+});
+
+
 //***************/ CALCOLO FUEL PER TEMPO DI GARA**************
 function calculatorLength(){
     // CALCOLO DELLA GARA IN SECONDI
@@ -51,12 +61,12 @@ function calculatorLength(){
 
     // CALCOLO ULTIMO STINT
     var lastStint = risSafe - (tc * (stints - 1));
-    document.getElementById("last_stint").innerHTML = 'Last stint: ' + Math.floor(lastStint);
+    document.getElementById("last_stint").innerHTML = 'Last stint: ' + lastStint.toFixed(2);
 
 
     // CALCOLO DURATA GARA
     var durata = rm / time;
-    document.getElementById("race_duration").innerHTML = 'Race duration: ' + durata.toFixed(2);
+    document.getElementById("race_duration").innerHTML = 'Race duration: ' +  Math.ceil(durata);
 
 
     document.getElementById("risultato_fuel").style.display = 'block';
@@ -132,13 +142,6 @@ function resetTime(){
 // }
 
 
-// //*******************/ON ENTER CALCOLO FUEL PER TEMPO DI GARA**********
-// var input = document.getElementById("fuellaps2");
-// input.addEventListener("keyup", function(event) {
-//     if (event.keyCode === 13) {
-//         calculatorLength();
-//     }
-// });
 
 
 
