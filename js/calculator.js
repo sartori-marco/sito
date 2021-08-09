@@ -46,7 +46,8 @@ function calculatorLength(){
     // CALCOLO ULTIMO STINT
     var lastStint = risSafe - (tc * (stints - 1));
     // document.getElementById("last_stint").innerHTML = 'Last stint: ' + lastStint.toFixed(0);
-    document.getElementById("last_stint").innerHTML = 'Last stint: ' + Math.floor(lastStint);
+    // document.getElementById("last_stint").innerHTML = 'Last stint: ' + Math.floor(lastStint);
+    document.getElementById("last_stint").innerHTML = 'Last stint: ' + lastStint;
 
     // CALCOLO DURATA GARA
     var durata = rm / time;
