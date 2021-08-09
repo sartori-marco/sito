@@ -41,12 +41,12 @@ function calculatorLength(){
     var tc = document.getElementById("tank_capacity").value;
     var stints = risSafe / tc + +1;
     // RISULTATO STINTS
-    document.getElementById("stints").innerHTML = 'Stints: ' + Math.round(stints);
+    document.getElementById("stints").innerHTML = 'Stints: ' + Math.floor(stints);
 
     // CALCOLO ULTIMO STINT
-    var lastStint = risSafe - (tc * stints - 1);
+    var lastStint = risSafe - (tc * (stints - 1));
     // document.getElementById("last_stint").innerHTML = 'Last stint: ' + lastStint.toFixed(0);
-    document.getElementById("last_stint").innerHTML = 'Last stint: ' + Math.round(lastStint);
+    document.getElementById("last_stint").innerHTML = 'Last stint: ' + Math.floor(lastStint);
 
     // CALCOLO DURATA GARA
     var durata = rm / time;
@@ -67,6 +67,8 @@ function resetTime(){
     document.getElementById("secondi").value = "";
     document.getElementById("millisecondi").value = "";
     document.getElementById("race_length").value = "";
+    document.getElementById("fuel_laps").value = "";
+    document.getElementById("tank_capacity").value = "";
     document.getElementById("risultato_fuel").style.display = 'none';
     document.getElementById("fuel_safe").style.display = 'none';
     document.getElementById("stints").style.display = 'none';
