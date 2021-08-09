@@ -41,11 +41,12 @@ function calculatorLength(){
     var tc = document.getElementById("tank_capacity").value;
     var stints = risSafe / tc + +1;
     // RISULTATO STINTS
-    document.getElementById("stints").innerHTML = 'Stints: ' + stints.toFixed(0);
+    document.getElementById("stints").innerHTML = 'Stints: ' + Math.round(stints);
 
     // CALCOLO ULTIMO STINT
     var lastStint = risSafe - (tc * stints - 1);
-    document.getElementById("last_stint").innerHTML = 'Last stint: ' + lastStint.toFixed(0);
+    // document.getElementById("last_stint").innerHTML = 'Last stint: ' + lastStint.toFixed(0);
+    document.getElementById("last_stint").innerHTML = 'Last stint: ' + Math.round(lastStint);
 
     // CALCOLO DURATA GARA
     var durata = rm / time;
