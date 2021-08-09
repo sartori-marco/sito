@@ -82,7 +82,8 @@ function resetTime(){
     document.getElementById("minuti").value = "";
     document.getElementById("secondi").value = "";
     document.getElementById("millisecondi").value = "";
-    document.getElementById("race_length").value = "";
+    document.getElementById("race_hr").value = "";
+    document.getElementById("race_min").value = "";
     document.getElementById("fuel_laps").value = "";
     document.getElementById("tank_capacity").value = "";
     document.getElementById("risultato_fuel").style.display = 'none';
