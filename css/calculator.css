@@ -1,8 +1,21 @@
+/* CODICE PER ERRORI CSS SU MOZZILLA  */
+@-moz-document url-prefix() {
+    /* input:focus{ */
+        /* border: 1px solid black; */
+        /* border: none; */
+    /* } */
+    /* select:focus {
+    border: none;
+    } */
+}
+
+
 *{
     margin: 0 auto;
     padding: 0;
     box-sizing: border-box;
 }
+
 
 body{
     font-size: 16px;
@@ -11,7 +24,7 @@ body{
     background-size: cover;
     background-position: center;
     /* width: 100%; */
-    height: 100vh;
+    /* height: 100vh; */
 }
 
 
@@ -33,6 +46,11 @@ body{
     text-transform: uppercase;
 }
 
+.logo img{
+    width: 600px;
+    height: 50px;
+    margin-bottom: 40px;
+}
 
 .bottoni_calc button{
     background-color: rgb(0, 35, 151);
@@ -44,16 +62,18 @@ body{
 }
 
 input:focus{
-    background-color: rgb(206, 248, 253);
+    /* background-color: rgb(206, 248, 253); */
+    border: none;
 }
 
 input{
     padding-left: 15px;
-    background-color: transparent;
+    background-color: #615F60;
     /* width: 20%; */
     /* width: 45px; */
     height: 25px;
-    color: black;
+    color: white;
+    border: none;
 }
 
 h1,h2,h3{
