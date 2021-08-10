@@ -49,6 +49,7 @@ input:focus{
 
 input{
     padding-left: 15px;
+    background-color: transparent;
     /* width: 20%; */
     /* width: 45px; */
     height: 25px;
