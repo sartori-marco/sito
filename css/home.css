@@ -5,8 +5,11 @@
     box-sizing: border-box;
 }
 
+video{
+    width: 800px;
+}
 
-.container{
+.body_color{
     background-color: #464646;
     color: white;
 }
@@ -25,7 +28,6 @@ h1{
 
 
 .news{
-    height: 80px;
     background-color: red;
 }
 
