@@ -1,13 +1,24 @@
 document.getElementById("calc_laps").style.display='none';
+
+
+// COLORE AL BOTTONE TIME
+if(document.getElementById("calc_time").style.display = 'block'){
+    document.getElementById("lengthBtn").style.backgroundColor = 'green';
+}
+
 // CLICK SUI BOTTONI TIME O LAPS
 function clickLaps(){
     document.getElementById("calc_laps").style.display='block';
     document.getElementById("calc_time").style.display='none';
+    document.getElementById("lapsBtn").style.backgroundColor = 'green';
+    document.getElementById("lengthBtn").style.backgroundColor = '';
 }
 
 function clickLength(){
     document.getElementById("calc_laps").style.display='none';
     document.getElementById("calc_time").style.display='block';
+    document.getElementById("lengthBtn").style.backgroundColor = 'green';
+    document.getElementById("lapsBtn").style.backgroundColor = '';
 }
 
 
@@ -39,7 +50,6 @@ function calculatorLength(){
     console.log(time);
 
     // CALCOLO BENZINA
-    // var rm = document.getElementById("race_length").value;
     var fl = document.getElementById("fuel_laps").value;
 
     var rislength = rm / time * fl;
@@ -53,7 +63,6 @@ function calculatorLength(){
     document.getElementById("fuel_safe").innerHTML = risSafe.toFixed(2)  + ' ' + 'liters';
 
     // CALCOLO STINTS
-    // var rf = document.getElementById("risultato_fuel").value;
     var tc = document.getElementById("tank_capacity").value;
     var stints = Math.floor(risSafe / tc + +1);
     // RISULTATO STINTS
@@ -86,8 +95,8 @@ function resetTime(){
     document.getElementById("race_min").value = "";
     document.getElementById("fuel_laps").value = "";
     document.getElementById("tank_capacity").value = "";
-    document.getElementById("risultato_fuel").value = "0";
-    // document.getElementById("risultato_fuel").style.display = 'none';
+    // document.getElementById("risultato_fuel").value = "0";
+    document.getElementById("risultato_fuel").style.display = 'none';
     document.getElementById("fuel_safe").style.display = 'none';
     document.getElementById("stints").style.display = 'none';
     document.getElementById("last_stint").style.display = 'none';

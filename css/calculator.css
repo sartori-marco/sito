@@ -158,11 +158,26 @@ footer{
 }
 
 
+@media screen and (max-width: 1000px) {
+    input{
+        padding-left: 0;
+    }
+}
 
 
-
+/* MEDIA QUERY PER MOBILE PER MOBILE */
 @media screen and (max-width: 767px){
     .text-left, .text-right{
         text-align: center;
     }
+    .wd_15{
+        width: 35%;
+    }
+    input{
+        padding-left: 0;
+    }
 }
+
+
+/* @media screen and (max-width: 740px){
+} */

@@ -20,55 +20,21 @@
             </div>
         </div>
         <div class="bottoni_calc">
-            <button onclick="clickLength()">time</button>
-            <button onclick="clickLaps()">laps</button>
+            <button id="lengthBtn" onclick="clickLength()">time</button>
+            <button id="lapsBtn" onclick="clickLaps()">laps</button>
         </div>
         <!-- END BOTTONI CALC -->
 
         <div id="calc_time">
-            <h3>per time</h3>
-            <!-- <div class="row">
-                <div class="col-xs-12">
-                    <label for="">Race Length</label>
-                    <input type="number" id="race_hr" class="wd_15" placeholder="Hours">
-                    <input type="number" id="race_min" class="wd_15" placeholder="Minutes">
-                </div>
-            </div> -->
-            <!-- END ROW -->
-            <!-- <div class="row">
-                <div class="col-xs-12">
-                    <label for="">LapTime</label>
-                    <input type="number" id="minuti" class="wd_15" placeholder="Minutes">
-                    <input type="number" id="secondi" class="wd_15" placeholder="Seconds">
-                    <input type="number" id="millisecondi" class="wd_15" placeholder="Milliseconds">
-                </div>
-            </div> -->
-            <!-- END ROW -->
-            <!-- <div class="row">
-                <div class="col-xs-12">
-                    <label for="">Fuel per Lap</label>
-                    <input type="number" id="fuel_laps" class="wd_15">
-                </div>
-            </div> -->
-            <!-- END ROW -->
-            <!-- <div class="row">
-                <div class="col-xs-12">
-                    <label for="">Tank Capacity</label>
-                    <input type="number" id="tank_capacity" class="wd_15">
-                </div>
-            </div> -->
-            <!-- END ROW -->
-        </div>
-        <!-- END DIV CALC TIME -->
-        <!-- <div style="overflow-x:auto;"> -->
+            <!-- END DIV CALC TIME -->
             <table>
                 <tr>
                     <td class="text-left">Race Length</td>
                 </tr>
                 <tr>
                     <td class="text-right">
-                        <input type="number" id="race_hr" class="wd_15" placeholder="Hours">
-                        <input type="number" id="race_min" class="wd_15" placeholder="Minutes">
+                        <input type="number" id="race_hr" class="wd_15" placeholder="Hr">
+                        <input type="number" id="race_min" class="wd_15" placeholder="Mi">
                     </td>
                     <td></td>
                 </tr>
@@ -77,9 +43,9 @@
                 </tr>
                 <tr>
                     <td class="text-right">
-                        <input type="number" id="minuti" class="wd_15" placeholder="Minutes">
-                        <input type="number" id="secondi" class="wd_15" placeholder="Seconds">
-                        <input type="number" id="millisecondi" class="wd_15" placeholder="Milliseconds">
+                        <input type="number" id="minuti" class="wd_15" placeholder="Min">
+                        <input type="number" id="secondi" class="wd_15" placeholder="Sec">
+                        <input type="number" id="millisecondi" class="wd_15" placeholder="Mil">
                     </td>
                 </tr>
                 <tr>
@@ -129,12 +95,10 @@
                     <td class="result_table" id="race_duration"></td>
                 </tr>
             </table>
-        <!-- </div> -->
-
-
+        </div>
+        <!-- END DIV CALC PER TIME -->
 
         <div id="calc_laps">
-            <h3>per laps</h3>
             laps
         </div>
         <!-- END DIV CALC LAPS -->
