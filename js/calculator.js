@@ -59,7 +59,7 @@ function calculatorLength(){
     document.getElementById("risultato_fuel").innerHTML = rislength.toFixed(2)  + ' ' + 'L';
 
     // CALCOLO RISULTATO BENZINA SAFE
-    var risSafe = rislength + +fl * 2;
+    var risSafe = rislength + ();
     // RISULTATO BENZINA SAFE
     document.getElementById("fuel_safe").innerHTML = risSafe.toFixed(2)  + ' ' + 'L';
 
@@ -76,7 +76,7 @@ function calculatorLength(){
 
     // CALCOLO DURATA GARA
     var durata = rm / time;
-    document.getElementById("race_duration").innerHTML = Math.ceil(durata) + ' ' + 'laps';
+    document.getElementById("race_duration").innerHTML = Math.ceil(durata) + ' ' + 'Laps';
 
 
     document.getElementById("risultato_fuel").style.display = 'block';
@@ -143,19 +143,26 @@ function calculatorLaps(){
     document.getElementById("risultato_fuel_lp").innerHTML = rislaps  + ' ' + 'L';
 
     // DICHIARAZIONE FUEL SAVE
-    var rislapsSave = rislaps + +2;
+    var rislapsSave = rislaps + (x * 1.2);
 
     // RISULTATO FUEL SAVE
     document.getElementById("fuel_safe_lp").innerHTML = rislapsSave  + ' ' + 'L';
 
     // CALCOLO LA DURATA DELLA GARA
-    // TRASFORMO IL TEMPO IN SECONDI ????????????????
+    // TRASFORMO IL TEMPO IN SECONDI  RISULTATO = SECONDI X GIRI????????????????
     var m = document.getElementById("minuti_lp").value;
     var s = document.getElementById("secondi_lp").value;
     var ml = document.getElementById("millisecondi_lp").value;
 
     var time = (m * 60) + +s + (+ml / 1000);
     console.log(time);
+
+    // CALCOLO DURATA GARA
+    var lp = document.getElementById("race_lp").value;
+    var durataLp = time * lp;
+
+    // RISULTATO DURATA GARA
+    document.getElementById("race_duration_lp").innerHTML = durataLp  + ' ' + 'Laps';
 
 
 
