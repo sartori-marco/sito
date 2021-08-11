@@ -59,7 +59,7 @@ function calculatorLength(){
     document.getElementById("risultato_fuel").innerHTML = rislength.toFixed(2)  + ' ' + 'L';
 
     // CALCOLO RISULTATO BENZINA SAFE
-    var risSafe = rislength + (time * 1.2);
+    var risSafe = rislength + (fl * 1.2);
     // RISULTATO BENZINA SAFE
     document.getElementById("fuel_safe").innerHTML = risSafe.toFixed(2)  + ' ' + 'L';
 
