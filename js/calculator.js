@@ -113,12 +113,12 @@ function resetTime(){
 // VECCHIO*************************************************
 
 //****************/ ON ENTER CALCOLO FUEL PER GIRI*************
-// var input = document.getElementById("fuellaps");
-// input.addEventListener("keyup", function(event) {
-//     if (event.keyCode === 13) {
-//         calculatorLaps();
-//     }
-// });
+var input = document.getElementById("tank_capacity_lp");
+input.addEventListener("keyup", function(event) {
+    if (event.keyCode === 13) {
+        calculatorLaps();
+    }
+});
 
 
 //**********************/ CALCOLO FUEL PER GIRI*******************
@@ -140,13 +140,27 @@ function calculatorLaps(){
     var rislaps = x * y;
 
     // RISULTATO FUEL NEEDED
-    document.getElementById("risultato_fuel_lp").innerHTML = rislaps  + ' ' + 'L';
+    document.getElementById("risultato_fuel_lp").innerHTML = rislaps.toFixed(2)  + ' ' + 'L';
 
     // DICHIARAZIONE FUEL SAVE
     var rislapsSave = rislaps + (y * 1.2);
 
     // RISULTATO FUEL SAVE
-    document.getElementById("fuel_safe_lp").innerHTML = rislapsSave  + ' ' + 'L';
+    document.getElementById("fuel_safe_lp").innerHTML = rislapsSave.toFixed(2)  + ' ' + 'L';
+
+
+    // CALCOLO STINTS
+    var tc = document.getElementById("tank_capacity_lp").value;
+    var stints = Math.floor(rislapsSave / tc + +1);
+    // RISULTATO STINTS
+    document.getElementById("stints_lp").innerHTML = Math.floor(stints);
+
+    // CALCOLO ULTIMO STINT
+    var lastStint = rislapsSave - (tc * (stints - 1));
+    document.getElementById("last_stint_lp").innerHTML = lastStint.toFixed(2) + ' ' + 'L';
+
+
+
 
     // CALCOLO LA DURATA DELLA GARA
     // TRASFORMO IL TEMPO IN SECONDI  RISULTATO = SECONDI X GIRI????????????????
@@ -163,8 +177,6 @@ function calculatorLaps(){
 
     // RISULTATO DURATA GARA
     document.getElementById("race_duration_lp").innerHTML = durataLp  + ' ' + 'Laps';
-
-
 
 
 
