@@ -211,7 +211,7 @@ footer{
         text-align: center;
     }
     .wd_15{
-        width: 35%;
+        width: 45%;
     }
     input{
         padding-left: 0;
@@ -222,5 +222,8 @@ footer{
 }
 
 
-/* @media screen and (max-width: 740px){
-} */
+@media screen and (max-width: 635px){
+    .logo img{
+        width: 70%;
+    }
+}
