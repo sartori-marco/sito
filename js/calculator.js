@@ -143,7 +143,7 @@ function calculatorLaps(){
     document.getElementById("risultato_fuel_lp").innerHTML = rislaps  + ' ' + 'L';
 
     // DICHIARAZIONE FUEL SAVE
-    var rislapsSave = rislaps + (x * 1.2);
+    var rislapsSave = rislaps + (y * 1.2);
 
     // RISULTATO FUEL SAVE
     document.getElementById("fuel_safe_lp").innerHTML = rislapsSave  + ' ' + 'L';
