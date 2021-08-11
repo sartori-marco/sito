@@ -53,8 +53,16 @@ h3 a:hover{
     height: 300px;
 } */
 
+/* .immagini img{
+    width: 800px;
+    height: 500px;
+} */
+
+
 p{
     margin-top: 30px;
+    margin-left: 80px;
+    margin-right: 80px;
 }
 
 .on_start a{
