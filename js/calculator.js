@@ -1,3 +1,4 @@
+// DISPLAY NONE AL CALC PER LAPS
 document.getElementById("calc_laps").style.display='none';
 
 
@@ -47,7 +48,7 @@ function calculatorLength(){
 
     var time = (m * 60) + +s + (+ml / 1000);
 
-    console.log(time);
+    // console.log(time);
 
     // CALCOLO BENZINA
     var fl = document.getElementById("fuel_laps").value;
@@ -55,12 +56,12 @@ function calculatorLength(){
     var rislength = rm / time * fl;
 
     // RISULTATO BENZINA A GIRO
-    document.getElementById("risultato_fuel").innerHTML = rislength.toFixed(2)  + ' ' + 'liters';
+    document.getElementById("risultato_fuel").innerHTML = rislength.toFixed(2)  + ' ' + 'L';
 
     // CALCOLO RISULTATO BENZINA SAFE
     var risSafe = rislength + +fl * 2;
     // RISULTATO BENZINA SAFE
-    document.getElementById("fuel_safe").innerHTML = risSafe.toFixed(2)  + ' ' + 'liters';
+    document.getElementById("fuel_safe").innerHTML = risSafe.toFixed(2)  + ' ' + 'L';
 
     // CALCOLO STINTS
     var tc = document.getElementById("tank_capacity").value;
@@ -70,12 +71,12 @@ function calculatorLength(){
 
     // CALCOLO ULTIMO STINT
     var lastStint = risSafe - (tc * (stints - 1));
-    document.getElementById("last_stint").innerHTML = lastStint.toFixed(2);
+    document.getElementById("last_stint").innerHTML = lastStint.toFixed(2) + ' ' + 'L';
 
 
     // CALCOLO DURATA GARA
     var durata = rm / time;
-    document.getElementById("race_duration").innerHTML = Math.ceil(durata);
+    document.getElementById("race_duration").innerHTML = Math.ceil(durata) + ' ' + 'laps';
 
 
     document.getElementById("risultato_fuel").style.display = 'block';
@@ -109,13 +110,6 @@ function resetTime(){
 
 
 
-
-
-
-
-
-
-
 // VECCHIO*************************************************
 
 //****************/ ON ENTER CALCOLO FUEL PER GIRI*************
@@ -128,29 +122,64 @@ function resetTime(){
 
 
 //**********************/ CALCOLO FUEL PER GIRI*******************
-// function calculatorLaps(){
-//     var x = document.getElementById("racelaps").value;
-//     var y = document.getElementById("fuellaps").value;
+function calculatorLaps(){
+    var x = document.getElementById("race_lp").value;
+    var y = document.getElementById("fuel_lp").value;
+
+    // if(x == ""){
+    //     alert('Please insert race laps');
+    //     document.getElementById("race_lp").focus();
+    // }
+
+    // if(y == ""){
+    //     alert('Please insert fuel consuption per lap');
+    //     document.getElementById("fuel_lp").focus();
+    // }
+
+    // DICHIARAZIONE OPERAZIONE FUEL NEEDED
+    var rislaps = x * y;
+
+    // RISULTATO FUEL NEEDED
+    document.getElementById("risultato_fuel_lp").innerHTML = rislaps  + ' ' + 'L';
+
+    // DICHIARAZIONE FUEL SAVE
+    var rislapsSave = rislaps + +2;
+
+    // RISULTATO FUEL SAVE
+    document.getElementById("fuel_safe_lp").innerHTML = rislapsSave  + ' ' + 'L';
+
+    // CALCOLO LA DURATA DELLA GARA
+    // TRASFORMO IL TEMPO IN SECONDI ????????????????
+    var m = document.getElementById("minuti_lp").value;
+    var s = document.getElementById("secondi_lp").value;
+    var ml = document.getElementById("millisecondi_lp").value;
+
+    var time = (m * 60) + +s + (+ml / 1000);
+    console.log(time);
 
 
-//     if(x == ""){
-//         alert('Please insert race laps');
-//         document.getElementById("racelaps").focus();
-//     }
 
-//     if(y == ""){
-//         alert('Please insert fuel consuption per lap');
-//         document.getElementById("fuellaps").focus();
-//     }
 
-//     // DICHIARAZIONE OPERAZIONE
-//     var rislaps = x * y;
 
-//     // RISULTATO
-//     document.getElementById("risultato").innerHTML = ' Fuel needed ' + rislaps  + ' ' + 'liters';
 
-//     document.getElementById("risultato").style.display = 'block';
-// }
+
+
+
+    // SE TORNO A TIME SI VEDE NAN E NON VOGLIO
+    document.getElementById("risultato_fuel_lp").style.display = 'block';
+    document.getElementById("minuti").value = "";
+    document.getElementById("secondi").value = "";
+    document.getElementById("millisecondi").value = "";
+    document.getElementById("race_hr").value = "";
+    document.getElementById("race_min").value = "";
+    document.getElementById("fuel_laps").value = "";
+    document.getElementById("tank_capacity").value = "";
+    document.getElementById("risultato_fuel").style.display = 'none';
+    document.getElementById("fuel_safe").style.display = 'none';
+    document.getElementById("stints").style.display = 'none';
+    document.getElementById("last_stint").style.display = 'none';
+    document.getElementById("race_duration").style.display = 'none';
+}
 
 
 

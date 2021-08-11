@@ -34,7 +34,7 @@
                 <tr class="border_tr">
                     <td class="text-right">
                         <input type="text" id="race_hr" class="wd_15" placeholder="Hr">
-                        <input type="text" id="race_min" class="wd_15" placeholder="Mi">
+                        <input type="text" id="race_min" class="wd_15" placeholder="Min">
                     </td>
                     <td></td>
                 </tr>
@@ -53,7 +53,7 @@
                 </tr>
                 <tr class="border_tr">
                     <td class="text-right">
-                        <input type="text" id="fuel_laps" class="wd_15">
+                        <input type="text" id="fuel_laps" class="wd_15" placeholder="L">
                     </td>
                 </tr>
                 <tr>
@@ -61,7 +61,7 @@
                 </tr>
                 <tr class="border_tr">
                     <td class="text-right">
-                        <input type="text" id="tank_capacity" class="wd_15">
+                        <input type="text" id="tank_capacity" class="wd_15" placeholder="L">
                     </td>
                 </tr>
                 <tr>
@@ -95,24 +95,100 @@
                     <td class="result_table" id="race_duration"></td>
                 </tr>
             </table>
+            <div class="row bottoni">
+                <div class="col-xs-12 col-sm-6">
+                    <button id="calcola" onclick="calculatorLength()">calcola</button>
+                </div>
+                <div class="col-xs-12 col-sm-6">
+                    <button id="reset" onclick="resetTime()">reset</button>
+                </div>
+            </div>
+            <!-- END ROW BOTTONI CALCOLA -->
         </div>
         <!-- END DIV CALC PER TIME -->
 
         <div id="calc_laps">
-            laps
+            <table>
+                <tr>
+                    <td class="text-left title_table">Race Laps</td>
+                </tr>
+                <tr class="border_tr">
+                    <td class="text-right">
+                        <input type="text" id="race_lp" class="wd_15" placeholder="Laps">
+                    </td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td class="text-left title_table">LapTime</td>
+                </tr>
+                <tr class="border_tr">
+                    <td class="text-right">
+                        <input type="text" id="minuti_lp" class="wd_15" placeholder="Min">
+                        <input type="text" id="secondi_lp" class="wd_15" placeholder="Sec">
+                        <input type="text" id="millisecondi_lp" class="wd_15" placeholder="Mil">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text-left title_table">Fuel per Lap</td>
+                </tr>
+                <tr class="border_tr">
+                    <td class="text-right">
+                        <input type="text" id="fuel_lp" class="wd_15" placeholder="L">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text-left title_table">Tank Capacity</td>
+                </tr>
+                <tr class="border_tr">
+                    <td class="text-right">
+                        <input type="text" id="tank_capacity_lp" class="wd_15" placeholder="L">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text-left title_table">Fuel needed</td>
+                </tr>
+                <tr class="result_height border_tr">
+                    <td class="result_table" id="risultato_fuel_lp"></td>
+                </tr>
+                <tr>
+                    <td class="text-left title_table">Fuel safe</td>
+                </tr>
+                <tr class="result_height border_tr">
+                    <td class="result_table" id="fuel_safe_lp"></td>
+                </tr>
+                <tr>
+                    <td class="text-left title_table">Stints</td>
+                </tr>
+                <tr class="result_height border_tr">
+                    <td class="result_table" id="stints_lp"></td>
+                </tr>
+                <tr>
+                    <td class="text-left title_table">Last stint</td>
+                </tr>
+                <tr class="result_height border_tr">
+                    <td class="result_table" id="last_stint_lp"></td>
+                </tr>
+                <tr>
+                    <td class="text-left title_table">Race duration</td>
+                </tr>
+                <tr class="result_height">
+                    <td class="result_table" id="race_duration_lp"></td>
+                </tr>
+            </table>
+            <div class="row bottoni" id="calc_laps">
+                <div class="col-xs-12 col-sm-6">
+                    <button id="calcola" onclick="calculatorLaps()">calcola</button>
+                </div>
+                <div class="col-xs-12 col-sm-6">
+                    <button id="reset" onclick="resetLaps()">reset</button>
+                </div>
+            </div>
+            <!-- END ROW BOTTONI CALCOLA -->
         </div>
         <!-- END DIV CALC LAPS -->
 
 
-        <div class="row bottoni">
-            <div class="col-xs-12 col-sm-6">
-                <button id="calcola" onclick="calculatorLength()">calcola</button>
-            </div>
-            <div class="col-xs-12 col-sm-6">
-                <button id="reset" onclick="resetTime()">reset</button>
-            </div>
-        </div>
-        <!-- END ROW BOTTONI CALCOLA -->
+        
 
 
 
