@@ -1,10 +1,37 @@
+(function($) { // Begin jQuery
+    $(function() { // DOM ready
+      // If a link has a dropdown, add sub menu toggle.
+        $('nav ul li a:not(:only-child)').click(function(e) {
+            $(this).siblings('.nav-dropdown').toggle();
+            // Close one dropdown when selecting another
+            $('.nav-dropdown').not($(this).siblings()).hide();
+            e.stopPropagation();
+        });
+        // Clicking away from dropdown will remove the dropdown class
+        $('html').click(function() {
+            $('.nav-dropdown').hide();
+        });
+        // Toggle open and close nav styles on click
+        $('#nav-toggle').click(function() {
+            $('nav ul').slideToggle();
+        });
+        // Hamburger to X toggle
+        $('#nav-toggle').on('click', function() {
+            this.classList.toggle('active');
+        });
+    }); // end DOM ready
+  })(jQuery); // end jQuery
+
+
+
+
 // DISPLAY NONE AL CALC PER LAPS
 document.getElementById("calc_laps").style.display='none';
 
 
 // COLORE AL BOTTONE TIME
 if(document.getElementById("calc_time").style.display = 'block'){
-    document.getElementById("lengthBtn").style.backgroundColor = 'green';
+    document.getElementById("lengthBtn").style.backgroundColor = '#b4b4b4';
     
 }
 
@@ -12,7 +39,7 @@ if(document.getElementById("calc_time").style.display = 'block'){
 function clickLaps(){
     document.getElementById("calc_laps").style.display='block';
     document.getElementById("calc_time").style.display='none';
-    document.getElementById("lapsBtn").style.backgroundColor = 'green';
+    document.getElementById("lapsBtn").style.backgroundColor = '#b4b4b4';
     document.getElementById("lengthBtn").style.backgroundColor = '';
     document.getElementById("minuti").value = "";
     document.getElementById("secondi").value = "";
@@ -31,7 +58,7 @@ function clickLaps(){
 function clickLength(){
     document.getElementById("calc_laps").style.display='none';
     document.getElementById("calc_time").style.display='block';
-    document.getElementById("lengthBtn").style.backgroundColor = 'green';
+    document.getElementById("lengthBtn").style.backgroundColor = '#b4b4b4';
     document.getElementById("lapsBtn").style.backgroundColor = '';
     document.getElementById("race_lp").value = "";
     document.getElementById("minuti_lp").value = "";

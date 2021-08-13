@@ -23,7 +23,6 @@
   })(jQuery); // end jQuery
 
 
-
 // DARK MODE
 const htmlEl = document.getElementsByTagName('html')[0];
 
