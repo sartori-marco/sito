@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CDN FONT AWESOME -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- CDN JQUERY -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
     <!-- CDN  BOOTSTRAP -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
     <!-- FAVICON -->
@@ -13,19 +17,67 @@
     <link rel="stylesheet" href="css/setup.css">
     <title>Setup</title>
 </head>
-<body>
-    <div class="container">
-        <div class="row text-right top_15">
-            <a href="index.html" class="home">Home</a>
+<body class="color_body">
+
+    <section class="navigation">
+        <div class="nav-container">
+            <div class="brand">
+                <strong><a href="index.html">simmar formula racing</a></strong>
+            </div>
+            <nav>
+                <div class="nav-mobile">
+                    <a id="nav-toggle" href="#!"><span></span></a>
+                </div>
+                <ul class="nav-list">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="">Contatti</a></li>
+                    <li>
+                        <a href="https://www.buymeacoffee.com/sartorimarco">Dona
+                        </a>
+                    </li>
+                    <li><a href="#!">Menu</a>
+                        <ul class="nav-dropdown">
+                        <li><a href="calculator.html">Fuel Calculator</a></li>
+                        <li><a href="weekplan.html">Week Plan</a></li>
+                        <li><a href="setup.html">Setup Tips</a></li>
+                        <li><a href="links.html">Utility</a></li>
+                        <li><a href="sporting.html">Sporting Code</a></li>
+                        <li><a href="ibanner.html">Members</a></li>
+                        <li class="text-right color_icone"><i onclick="toggleTheme('dark');" class="far fa-moon"></i>   
+                            <i onclick="toggleTheme('light');" class="fas fa-sun"></i>
+                        </li>
+                        </ul>
+                    </li>
+                    <!-- <li><a href="#!">Pricing</a></li>
+                    <li><a href="#!">Contact</a></li> -->
+                </ul>
+            </nav>
         </div>
-        <div class="row">
-            <div class="col-xs-12 text-center">
-                <img src="img/setup_tips.png" alt="logo setup">
+    </section>
+
+
+
+    <div class="container">
+        <div class="row text-center">
+            <div class="col-xs-12">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus quod exercitationem dolor dolores, obcaecati tempore molestiae sunt repellat eius? Delectus atque autem incidunt beatae explicabo iure adipisci rerum cum inventore!
+            </div>
+            <div class="col-xs-12">
+                <img src="img/it_brakebias.png" alt="">
             </div>
         </div>
         <!-- END ROW -->
-        PAGINA SETUP
+        <div class="row">
+            <div class="col-xs-12 text-center">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, quaerat ipsa rerum mollitia voluptatibus quo ea impedit similique quis omnis nihil cumque tenetur, incidunt minima autem consequuntur officia saepe tempore?
+            </div>
+            <div class="col-xs-12 text-center">
+                <img src="img/it_underover.png" alt="">
+            </div>
+        </div>
+        <!-- END ROW -->
     </div>
     <!-- END CONTAINER -->
+    <script src="js/setup.js"></script>
 </body>
 </html>
