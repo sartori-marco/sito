@@ -29,3 +29,12 @@ const htmlEl = document.getElementsByTagName('html')[0];
 const toggleTheme = (theme) => {
     htmlEl.dataset.theme = theme;
 }
+
+
+
+// function googleTranslateElementInit() {
+//         new google.translate.TranslateElement(
+//             {pageLanguage: 'it'},
+//             'google_translate_element'
+//         );
+//     }

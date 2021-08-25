@@ -20,8 +20,7 @@
             this.classList.toggle('active');
         });
     }); // end DOM ready
-  })(jQuery); // end jQuery
-
+})(jQuery); // end jQuery
 
 
 
@@ -31,7 +30,7 @@ document.getElementById("calc_laps").style.display='none';
 
 // COLORE AL BOTTONE TIME
 if(document.getElementById("calc_time").style.display = 'block'){
-    document.getElementById("lengthBtn").style.backgroundColor = '#b4b4b4';
+    document.getElementById("lengthBtn").style.backgroundColor = '#262626';
     
 }
 
@@ -39,8 +38,8 @@ if(document.getElementById("calc_time").style.display = 'block'){
 function clickLaps(){
     document.getElementById("calc_laps").style.display='block';
     document.getElementById("calc_time").style.display='none';
-    document.getElementById("lapsBtn").style.backgroundColor = '#b4b4b4';
-    document.getElementById("lengthBtn").style.backgroundColor = '';
+    document.getElementById("lapsBtn").style.backgroundColor = '#262626';
+    document.getElementById("lengthBtn").style.backgroundColor = '#d6d6d6';
     document.getElementById("minuti").value = "";
     document.getElementById("secondi").value = "";
     document.getElementById("millisecondi").value = "";
@@ -58,8 +57,8 @@ function clickLaps(){
 function clickLength(){
     document.getElementById("calc_laps").style.display='none';
     document.getElementById("calc_time").style.display='block';
-    document.getElementById("lengthBtn").style.backgroundColor = '#b4b4b4';
-    document.getElementById("lapsBtn").style.backgroundColor = '';
+    document.getElementById("lengthBtn").style.backgroundColor = '#262626';
+    document.getElementById("lapsBtn").style.backgroundColor = '#d6d6d6';
     document.getElementById("race_lp").value = "";
     document.getElementById("minuti_lp").value = "";
     document.getElementById("secondi_lp").value = "";
