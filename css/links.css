@@ -1,3 +1,4 @@
+/********************************* CSS UTILITY */
 @import url('https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;1,200;1,300;1,400&display=swap');
 
 *{
@@ -187,9 +188,19 @@ body{
 
 
 .logo_img{
-    margin-top: 60px;
+    margin-top: 22px;
+    text-align: center;
     width: 100%;
 }
+
+
+.text_top h4{
+    margin: 20px 50px;
+    padding-bottom: 25px;
+}
+
+
+
 
 .container{
     padding-top: 40px;
@@ -212,7 +223,7 @@ h1{
 
 h3{
     text-transform: uppercase;
-    color: black;
+
     text-align: center;
     font-size: 27px;
 }
@@ -223,13 +234,13 @@ h5{
     font-size: 17px;
 }
 
-h5 a{
-    color: black;
+/* h5 a{
+    color: white;
 }
 
 h5 a:hover{
     color: black;
-}
+} */
 
 
 
@@ -247,7 +258,7 @@ p{
 
 .on_start a{
     position: fixed;
-    bottom: 75px;
+    bottom: 105px;
     right: 50px;
     background-color: black;
     color: white;
@@ -257,62 +268,64 @@ p{
 
 .on_start i{
     font-size: 20px;
-}
-
-#dark_mode{
-    margin-top: 80px;
-    background-color: red;
-}
-
-.dark-mode {
-    background-color: black;
     color: white;
 }
 
 
-/********************* DARK MODE ***************/
-html[data-theme='dark'] {
-    background: #000;
-    filter: invert(1) hue-rotate(180deg)
-}
 
-html[data-theme='dark'] img {
-    filter: invert(1) hue-rotate(180deg)
-}
 
-.color_icone{
-    background-color: #fff;
+/* DARK MODE */
+#darkToggle{
+    border: none;
+    width: 100%;
+    text-align: left;
+    padding-left: 15px;
+    padding-bottom: 15px;
+    padding-top: 15px;
     color: black;
-    border-top: 1px solid black;
+    background-color: #fff;
+}
+#darkToggle:hover{
+    background-color: #f2f2f2;
 }
 
-i{
+.darkmode h3{
     color: white;
-    font-size: 20px;
-    padding: 5px;
-    cursor: pointer;
 }
+
+.darkmode .container a{
+    color: white;
+}
+
+
+
 
 footer{
-    height: 70px;
+    padding-top: 40px;
+    height: 100px;
     background-color: #ffff;
     font-size: 15px;
-    line-height: 55px;
+    color: black;
 }
 
 
 
 
 
-/* MEDIA QUERI */
 /* MEDIA QUERY */
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 805px) {
     .logo_img{
-        margin-top: 87px;
+        margin-top: 47px;
     }
 }
 @media screen and (max-width:900px) {
     img{
         width: 90%;
+    }
+}
+@media screen and (max-width: 565px) {
+    footer{
+        padding-top: 20px;
+        height: 120px;
     }
 }
