@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- DARK MODE -->
+    <script>
+        if (localStorage.getItem('darkmode') === '1') {
+            document.documentElement.classList.add('darkmode');
+        }
+    </script>
+    <style>
+        .darkmode body { background: #222; color: white;}
+        .darkmode .light-only { display: none; }
+        html:not(.darkmode) .dark-only { display: none; }
+    </style>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CDN FONT AWESOME -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- CDN JQUERY -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <!-- CDN  BOOTSTRAP -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+    <!-- FAVICON -->
+    <link rel="SHORTCUT ICON" href="https://img.icons8.com/color/48/000000/f1-race-car-top-veiw.png" />
+    <!-- LINK CSS -->
+    <link rel="stylesheet" href="css/faq.css">
+    <title>Faq</title>
+</head>
+<body class="body_color">
+    <section class="navigation">
+        <div class="nav-container">
+            <div class="brand">
+                <strong><a href="index.html">simmar formula racing</a></strong>
+            </div>
+            <nav>
+                <div class="nav-mobile">
+                    <a id="nav-toggle" href="#!"><span></span></a>
+                </div>
+                <ul class="nav-list">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="contact.html">Contatti</a></li>
+                    <li>
+                        <a href="https://www.buymeacoffee.com/sartorimarco">Dona
+                        </a>
+                    </li>
+                    <li><a href="#!">Menu</a>
+                        <ul class="nav-dropdown">
+                        <li><a href="calculator.html">Fuel Calculator</a></li>
+                        <li><a href="weekplan.html">Week Planner</a></li>
+                        <li><a href="setup.html">Setup Tips</a></li>
+                        <li><a href="utility.html">Utility</a></li>
+                        <li><a href="members.html">Members</a></li>
+                        <li><a href="liveries.html">Liveries</a></li>
+                        <li><a href="faq.html">Faq</a></li>
+                        <li><a href="https://ir-core-sites.iracing.com/members/pdfs/20210504-iRacing_Sporting_Code_dated_Apr_23_2021.pdf" target="_blank">Sporting Code</a></li>
+                        <li>
+                            <button id="darkToggle">
+                                <span class="dark-only">LIGHT</span>
+                                <span class="light-only">DARK</span>
+                                MODE
+                            </button>
+                        </li>
+                        </ul>
+                    </li>
+                    <!-- END MENU -->
+                </ul>
+            </nav>
+        </div>
+    </section>
+    <div class="container">
+        <!-- DARK MODE -->
+        <script>
+            document.querySelector('#darkToggle').addEventListener('click', function() {
+            var wasDarkMode = localStorage.getItem('darkmode') === '1';
+        
+            localStorage.setItem('darkmode', wasDarkMode ? '0' : '1');
+            document.documentElement.classList[wasDarkMode ? 'remove' : 'add']('darkmode');
+            });
+        </script>
+
+        <div class="row text-center">
+            <div class="col-xs-12">
+                <h1>faq</h1>
+            </div>
+        </div>
+        <!-- END ROW -->
+        <div class="row intro">
+            <h4>
+                Queste sono le domande principale che prima o poi ogni pilota di iRacing si fa.
+                <br>
+                Vi consigliamo di investire qualche minuto e leggervi lo Sporting Code che approfondisce attentamente ogni sorta di dubbio possiate avere.
+                Vi ricordiamo che lo Sporting Code è un regolamento ufficiale e viene costantemente aggiornato.
+            </h4>
+        </div>
+        <div class="domande">
+            <div class="row">
+                <div class="col-xs-12">
+                    <h3> <a href="#d1">Che cos'è iRacing e qual'è la differenza con gli altri simulatori?</a></h3>
+                </div>
+            </div>
+            <!-- END ROW -->
+            <div class="row">
+                <div class="col-xs-12">
+                    <h3> <a href="#d2">Quanto costa veramente iRacing?</a></h3>
+                </div>
+            </div>
+            <!-- END ROW -->
+            <div class="row">
+                <div class="col-xs-12">
+                    <h3> <a href="#d3">Cosa mi conviene comprare?</a></h3>
+                </div>
+            </div>
+            <!-- END ROW -->
+            <div class="row">
+                <div class="col-xs-12">
+                    <h3> <a href="#d4">Cosa sono le patenti, irating e safety rating?</a></h3>
+                </div>
+            </div>
+            <!-- END ROW -->
+            <div class="row">
+                <div class="col-xs-12">
+                    <h3> <a href="#d5">In che modo posso migliorare?</a></h3>
+                </div>
+            </div>
+            <!-- END ROW -->
+            <div class="row">
+                <div class="col-xs-12">
+                    <h3> <a href="#d6">Cosa sono i team le gare di squadra?</a></h3>
+                </div>
+            </div>
+            <!-- END ROW -->
+            <div class="row">
+                <div class="col-xs-12">
+                    <h3> <a href="#d7">Come si gestiscono le gare di squadra?</a></h3>
+                </div>
+            </div>
+            <!-- END ROW -->
+            <div class="row">
+                <div class="col-xs-12 last">
+                    <h3> <a href="#d8">Come posso segnalare un pilota scorretto?</a></h3>
+                </div>
+            </div>
+            <!-- END ROW -->
+        </div>
+        <!-- END DIV DOMANDE -->
+        <hr>
+
+
+
+        <div class="risposte">
+            <div class="row">
+                <div class="col-xs-12">
+                    <h3>Che cos'è iRacing e qual'è la differenza con gli altri simulatori?</h3>
+                    <h4 id="d1"class="jumptarget">
+                        iRacing è un simulatore di guida nato nel 2008 negli USA.
+                        <br>
+                        Questo sim è molto diverso dagli altri in commercio, prevede un abbonamento mensile o annuale, ed i contenuti come auto e piste vanno acquistati a parte, quindi sicuramente non è economico.
+                        Non esistono lobby multiplayer come siamo stati spesso abituati, ma le gare sono divise in un calendario che cambia ogni stagione.
+                        <br>
+                        Una stagione è composta da 13 settimane (12 in realtà + 1 con gare amichevoli a fine stagione), ogni settimana ci sono gare e piste prefissate, che si ripetono ogni 1 o 2 ore. Alla fine della settimana il calendario cambia e così via fino alla fine della stagione.
+                        <br>
+                        Mentre correrete sarete valutati con due punteggi, iRating e Safety Rating. Il Safety Rating vi consentirà di avanzare con le patenti, sbloccando altre categorie di gare.
+                        <br>
+                        Questo sistema spingerà voi e gli altri drivers a guidare correttamente ed al massimo delle vostre capacità, perchè un punteggio negativo vi farà perdere letteralmente del tempo di gioco.
+                        <br>
+                        Oltre a questo, iRacing ha all'interno decine di macchine e tantissime piste, un modello di guida unico nel suo realismo, e l'opportunità di gareggiare sempre sfidando i propri limiti.
+                        </h4>
+                </div>
+            </div>
+            <!-- END ROW -->
+            <div class="row">
+                <div class="col-xs-12">
+                    <h3>Quanto costa veramente iRacing?</h3>
+                    <h4 id="d2" class="jumptarget">
+                        iRacing prevede un abbonamento e l'acquisto di piste e auto, una delle prime domande è l'effettivo costo.
+                        <br>
+                        Per la prima sottoscrizione ci sono spesso numerose offerte con codici che potete trovare tranquillamente sul web (es: 3 mesi x 5€). Appena iscritti avrete gia una decina di auto e di piste gratuitamente.
+                        <br>
+                        Alla vostra iscrizione sarete in patente ROOKIE dove TUTTE le gare e le piste saranno gratuite, quindi approfittatene per fare esperienza e capire come guidare correttamente e più velocemente possibile!
+                        <br>
+                        Quando salirete di patente, sicuramente in calendario ci sarà qualche pista ed auto che già possedete gratuitamente ma il grosso sarà a pagamento. 
+                        <br>
+                        Considerate che un'auto costa 12$+VAT e una pista 15$+VAT. Se volete giocare spendendo il meno possibile cercate di scegliere le categorie di gara che prefetite (GT, Formula, ecc..) e scegliete l'auto che potrete utilizzare di più (es Ferrari GT3 corre in serie patente D, C e B) e scegliete le piste per le vostre serie consultando un calendario.
+                        <br>
+                        Per risparmiare ricordate che acquistando 3 elementi c'è uno sconto del 10%, acquistandone 6 del 15%. 
+                        <br>
+                        Se in una stagione correte NELLA STESSA SERIE in 8 delle 12 gare disponibili, a fine stagione vi verranno accreditati 4$ per serie di patente D e C, e 7$ per serie di patente B ed A, il massimo accumulabile sono 10$ a stagione. 
+                        <br>
+                        Tenete conto quindi di 100$ annui per l'abbonamento, altri 100$ per comprare auto e piste (il periodo iniziale è il peggiore, poi quando avrete messo da parte dei contenuti si acquisterà sempre meno).
+                    </h4>
+                </div>
+            </div>
+            <!-- END ROW -->
+            <div class="row">
+                <h3>Cosa mi conviene comprare?</h3>
+                <div class="col-xs-12">
+                    <h4 id="d3" class="jumptarget">
+                        Cercate di scegliere poche serie e correrle più che potete. Questo vi aiuterà a prendere confidenza sia con l'auto che con la pista ed essere più competitivi possibile. 
+                        <br>
+                        Cosa conviene comprare è soggettivo a seconda dei gusti. Cercate delle auto che potrete riutilizzare in futuro per altre serie, e delle piste più popolari possibili che corrano nelle categorie che preferite, in modo di aver modo di riutilizzare i vostri acquisti e massimizzare la spesa.
+                        <br>
+                        Ad esempio per le serie GT la Ferrari GT3, e piste come SPA, Monza, Imola, Hockenheim ecc.. le riutilizzerete fino allo sfinimento, quindi è un'ottima spesa.
+                    </h4>
+                </div>
+            </div>
+            <!-- END ROW -->
+            <div class="row">
+                <h3>Cosa sono le patenti, irating e safety rating?</h3>
+                <div class="col-xs-12">
+                    <h4 id="d4" class="jumptarget">
+                        Quando correte, ogni errore che farete, sarà punito con un inc (o 1x). Un off-track vi costerà un inc, la perdita di controllo 2 inc e un contatto con un altro pilota, che sia colpa vostra o sua, vi costerà 4 inc (se il contatto è molto leggero vi daranno 0 inc). Ogni gara ha un limite di inc, una volta superati sarà bandiera nera e squalifica. 
+                        <br>
+                        A fine gara a seconda degli inc che avete fatto il vostro Safety Rating migliorerà o peggiorerà. 
+                        <br>
+                        Il calcolo del safety rating non è semplice, è un trend calcolato in quante curve fate ogni inc, nelle precedenti 2600 curve, quindi vi potrà capitare che a volte con 4 inc guadagnate safety rating, altre volte lo perdete, dipende dalla vostra storia.
+                        <br>
+                        Il Safety Rating serve a salire e scendere di patente.
+                        <br>
+                        A fine stagione se avete più di 3 SR verrete promossi, se avete meno di 2 verrete retrocessi.
+                        <br>
+                        Se superate i 4 SR verrete promossi immediatamente, se andate sotto gli 1 retrocessi.
+                        <br>
+                        L'iRating invece è un giudizio pure sulle vostre prestazioni, più arrivate avanti più guadagnerete, più arrivate indietro più perderete.
+                        <br>
+                        Questa valutazione serve unicamente per farvi sempre correre con piloti del vostro stesso livelli.
+                        <br>
+                        Gli split delle gare (ovvero i server dove correte) accoppieranno sempre piloti con iRating simile, segnalato dal SOF (Strenght Of Field) che è la media dell'iRating di tutti i partecipanti.
+                        <br>
+                        Avere un iRating alto vi consentirà di correre con piloti più rodati e quindi più corretti, e questo è un fattore molto importante.
+
+                    </h4>
+                </div>
+            </div>
+            <!-- END ROW -->
+            <div class="row">
+                <h3>In che modo posso migliorare?</h3>
+                <div class="col-xs-12">
+                    <h4 id="d5" class="jumptarget">
+                        Non entrate mai in una gara solo perchè avete voglia di correre ma preparate sempre minuziosamente ogni evento.
+                        <br>
+                        Entrare in una gara in cui non siete preparati vi porterà ad essere lenti, fare errori di guida e poi di frustrazione. In questo modo perderete sia SR che iRating e vi servirà del tempo prezioso per recuperarli. 
+                        <br>
+                        Vi potrebbe venire in mente di andare in fondo al gruppo per guadagnare SR e passare prima alla patente successiva, non fatelo mai. Questo vi porterà a perdere tantissimo iRating e ci vorrà molto tempo per recuperarlo.
+                        <br>
+                        Preparate le gare con dei test drive o practice, comparate i tempi con quelli dei vostri amici, guardate i replay di chi è piu forte di voi, guardate le guide su youtube per la pista, ecc.
+                        <br>
+                        Trattate sempre ogni gara come se fosse una vera ed i risultati (e il divertimento) arriveranno.
+                    </h4>
+                </div>
+            </div>
+            <!-- END ROW -->
+            <div class="row">
+                <h3>Cosa sono i team le gare di squadra?</h3>
+                <div class="col-xs-12">
+                    <h4 id="d6" class="jumptarget">
+                        Alcune gare sono gare di squadra, ovvero delle endurance della durata di diverse ore che DEVONO OBBLIGATORIAMENTE essere affrontate in più piloti, pena la squalifica a fine gara.
+                        <br>
+                        In iRacing si possono fare dei Teams dove invitare i propri amici, in queste gare andrà iscritto il Team con i relativi piloti partecipanti ed ognuno dovrà correre almeno per la sua "Fair Share", ovvero la durata della gara diviso il numero dei piloti diviso 4. 
+                        <br>
+                        Solo un pilota alla volta potrà stare in auto, mentre i compagni potranno fare da Spotter, ovvero assistere alla gara con l'inquadratura preferita, senza alcuna latenza, ed aiutare chi è al volante nelle manovre di sorpasso, nelle strategie ed altre fasi di gara. 
+                        <br>
+                        Il cambio pilotà è semplicissimo. Nella schermata di replay mentre siete fermi ai box vedrete il tasto in cima per entrare in auto, una volta che il pilota entra vedrete chi è dentro. Al pit stop successivo chi è alla guida premerà ESC per tornare ai box e chi è nella schermata di replay vedrà che il sedile è libero e potrà entrare. Più semplice di come si pensi.
+                    </h4>
+                </div>
+            </div>
+            <!-- END ROW -->
+            <div class="row">
+                <h3>Come si gestiscono le gare di squadra?</h3>
+                <div class="col-xs-12">
+                    <h4 id="d7" class="jumptarget">
+                        Le gare di squadra vanno provate con discreta minuzia. 
+                        <br>
+                        Innanzitutto fate diversi test su pista per avere un buon passo e diminuire il più possibile le possibilità di errore. Controllate il vostro consumo di carburante per giro e i vostri tempi a pieno serbatoio, ed utilizzando un Fuel Calculator calcolate il numero di soste necessarie per arrivare a fine gara.
+                        <br>
+                        Un'endurance va corsa con più tranquillità di una gara sprint. Non ha nessun senso rischiare una manovra azzardata con ancora 3 4 o 10 ore di gara davanti a se, le posizioni si guadagnano con il passo e la costanza. Cercate di segnalare un sorpasso (sia di gara che verso un doppiato) con gli abbaglianti ed essere sempre più che sicuri della vostra manovra e fatevi aiutare dal vostro spotter.
+                        <br>
+                        Alla fine di ogni stint, che durerà circa un'ora, sentirete dei cali di gomma. Cercate quindi di gestirle durante la gara senza stressarle troppo e, soprattutto alle prime gare, cambiatele ogni sosta.
+                        <br>
+                        Diventando più esperti potrete valutare di fare dei doppi stint senza cambiarle o magari cambiare solo le anteriori o le posteriori per risparmiare un po di sosta. 
+                        <br>
+                        Monitorate anche il cambio di temperatura della pista che influisce moltissimo sulla vostra prestazione.
+                    </h4>
+                </div>
+            </div>
+            <!-- END ROW -->
+            <div class="row">
+                <h3>Come posso segnalare un pilota scorretto?</h3>
+                <div class="col-xs-12">
+                    <h4 id="d8" class="jumptarget">
+                        iRacing ci consente di fare dei "Protest" a fine gara dalla schermata dei risultati.
+                        <br>
+                        Al protest va allegato un pezzo del replay che motiva la vostra decisione con la relativa descrizione ed i nomi dei piloti coinvolti. Dal punto di vista pratico iRacing punisce solo i piloti che vi danneggiano INTENZIONALMENTE, quindi non chi rientra male, sbaglia una frenata, ecc..
+                        <br>
+                        Le punizioni sono severe e vanno dal ban per 1 giorno al ban permanente in seguito di numerose violazioni. Vi consiglio di leggere attentamente la sezione dedicata dello Sporting Code prima di un Protest.
+                    </h4>
+                </div>
+            </div>
+            <!-- END ROW -->
+        </div>
+        <!-- END DIV RISPOSTE -->
+    </div>
+    <!-- END CONTAINER -->
+    <footer>
+        <div class="col-xs-12 text-center">
+            Sito disegnato e programmato interamente da Luca Simonetti e Marco Sartori. Se ti piace il progetto sostienici con una donazione :)
+        </div>
+    </footer>
+    
+    <script src="js/faq.js"></script>
+</body>
+</html>

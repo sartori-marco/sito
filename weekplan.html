@@ -1,17 +1,1076 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- DARK MODE -->
+    <script>
+        if (localStorage.getItem('darkmode') === '1') {
+            document.documentElement.classList.add('darkmode');
+        }
+    </script>
+    <style>
+        .darkmode body { background: #222; color: white;}
+        .darkmode .light-only { display: none; }
+        html:not(.darkmode) .dark-only { display: none; }
+    </style>
+
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CDN FONT AWESOME -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- CDN JQUERY -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
     <!-- CDN  BOOTSTRAP -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
     <!-- FAVICON -->
     <link rel="SHORTCUT ICON" href="https://img.icons8.com/color/48/000000/f1-race-car-top-veiw.png" />
     <link rel="icon" href="https://img.icons8.com/color/48/000000/f1-race-car-top-veiw.png" type="image/ico" />
+    <!-- LINK CSS -->
+    <link rel="stylesheet" href="css/weekplan.css">
     <title>Week plan</title>
 </head>
-<body>
-    PAGINA WEEK PLAN
+<body onload="startTime()" class="body_color">
+    <h1>WORK IN PROGRESS</h1>
+
+    <section class="navigation">
+        <div class="nav-container">
+            <div class="brand">
+                <strong><a href="index.html">simmar formula racing</a></strong>
+            </div>
+            <nav>
+                <div class="nav-mobile">
+                    <a id="nav-toggle" href="#!"><span></span></a>
+                </div>
+                <ul class="nav-list">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="contact.html">Contatti</a></li>
+                    <li>
+                        <a href="https://www.buymeacoffee.com/sartorimarco">Dona
+                        </a>
+                    </li>
+                    <li><a href="#!">Menu</a>
+                        <ul class="nav-dropdown">
+                        <li><a href="calculator.html">Fuel Calculator</a></li>
+                        <li><a href="weekplan.html">Week Planner</a></li>
+                        <li><a href="setup.html">Setup Tips</a></li>
+                        <li><a href="utility.html">Utility</a></li>
+                        <li><a href="members.html">Members</a></li>
+                        <li><a href="liveries.html">Liveries</a></li>
+                        <li><a href="faq.html">Faq</a></li>
+                        <li><a href="https://ir-core-sites.iracing.com/members/pdfs/20210504-iRacing_Sporting_Code_dated_Apr_23_2021.pdf" target="_blank">Sporting Code</a></li>
+                        <li>
+                                <button id="darkToggle">
+                                    <span class="dark-only">LIGHT</span>
+                                    <span class="light-only">DARK</span>
+                                    MODE
+                                </button>
+                        </li>
+                        </ul>
+                    </li>
+                    <!-- END MENU -->
+                </ul>
+            </nav>
+        </div>
+    </section>
+    <div class="container_big">
+        <!-- DARK MODE -->
+        <script>
+            document.querySelector('#darkToggle').addEventListener('click', function() {
+            var wasDarkMode = localStorage.getItem('darkmode') === '1';
+        
+            localStorage.setItem('darkmode', wasDarkMode ? '0' : '1');
+            document.documentElement.classList[wasDarkMode ? 'remove' : 'add']('darkmode');
+            });
+        </script>
+        <h1 style="text-align: center;">WORK IN PROGRESS</h1>
+
+        <div id="clockdate">
+            <div class="clockdate-wrapper">
+                <div id="clock"></div>
+                <div id="date"></div>
+            </div>
+        </div>
+
+
+
+
+
+
+        <ul class="responsive-table">
+            <li class="table-header text-center">
+                <div class="col col-1">Classe</div>
+                <div class="col col-1">Serie</div>
+                <div class="col col-3">Tracciati</div>
+                <div class="col col-1">Auto</div>
+                <div class="col col-1">Inizio</div>
+                <div class="col col-1">Lunghezza</div>
+                <div class="col col-1">Race times</div>
+            </li>
+
+            <!-- SERIE MAZDA  -->
+            <li class="table-row text-center row_white">
+                <div class="col col-1" data-label="Classe">R</div>
+                <div class="col col-1 click-here" data-label="Serie">Fanatec Global Mazda MX-5 Cup</div>
+                <div id="prova1" class="col col-3" data-label="Tracciati">Tracciato 1 prova dal 24 al 26 agosto</div>
+                <div id="prova2" class="col col-3" data-label="Tracciati">Tracciato 2 prova dal 27 al 29</div>
+                <div id="prova3" class="col col-3" data-label="Tracciati">Tracciato 3 prova dal 30 agosto al 1 settembre</div>
+                <div class="col col-1" data-label="Auto">Global Mazda MX-5 Cup</div>
+                <div class="col col-1" data-label="Inizio">24-08-2021</div>
+                <div class="col col-1" data-label="Lunghezza">15L</div>
+                <div class="col col-1" data-label="Race times">Ogni ora. Partenza ore 2:00</div>
+            </li>
+            <!-- SERIE VEE -->
+            <li class="table-row text-center row_grey">
+                <div class="col col-1" data-label="Classe">R</div>
+                <div class="col col-1 click-here_vee" data-label="Serie">Formula Vee iRacing Series</div>
+                <div id="prova1" class="col col-3" data-label="Tracciati">Tracciato 1 prova dal 24 al 26 agosto</div>
+                <div id="prova2_vee" class="col col-3" data-label="Tracciati">Tracciato 2 prova dal 27 al 29</div>
+                <div id="prova3" class="col col-3" data-label="Tracciati">Tracciato 3 prova dal 30 agosto al 1 settembre</div>
+                <div class="col col-1" data-label="Auto">Formula Vee</div>
+                <div class="col col-1" data-label="Inizio">24-08-2021</div>
+                <div class="col col-1" data-label="Lunghezza">15L</div>
+                <div class="col col-1" data-label="Race times">Ogni ora. Partenza ore 2:30</div>
+            </li>
+            <!-- SERIE FERRARI GT3 -->
+            <li class="table-row text-center row_white">
+                <div class="col col-1" data-label="Classe">D</div>
+                <div class="col col-1 click-here_fer" data-label="Serie">Ferrari GT3 Challenge - Fixed</div>
+                <div id="prova1" class="col col-3" data-label="Tracciati">Tracciato 1 prova dal 24 al 26 agosto</div>
+                <div id="prova2_fer" class="col col-3" data-label="Tracciati">Tracciato 2 prova dal 27 al 29</div>
+                <div id="prova3" class="col col-3" data-label="Tracciati">Tracciato 3 prova dal 30 agosto al 1 settembre</div>
+                <div class="col col-1" data-label="Auto">Ferrari 488 GT3</div>
+                <div class="col col-1" data-label="Inizio">24-08-2021</div>
+                <div class="col col-1" data-label="Lunghezza">15L</div>
+                <div class="col col-1" data-label="Race times">Ogni ora. Partenza ore 2:30</div>
+            </li>
+            <!-- SERIE SKIPPY -->
+            <li class="table-row text-center row_grey">
+                <div class="col col-1" data-label="Classe">D</div>
+                <div class="col col-1 click-here_skip" data-label="Serie">Skip Barber Race Series</div>
+                <div id="prova1" class="col col-3" data-label="Tracciati">Tracciato 1 prova dal 24 al 26 agosto</div>
+                <div id="prova2_skip" class="col col-3" data-label="Tracciati">Tracciato 2 prova dal 27 al 29</div>
+                <div id="prova3" class="col col-3" data-label="Tracciati">Tracciato 3 prova dal 30 agosto al 1 settembre</div>
+                <div class="col col-1" data-label="Auto">Skip Barber Formula 2000</div>
+                <div class="col col-1" data-label="Inizio">24-08-2021</div>
+                <div class="col col-1" data-label="Lunghezza">15L</div>
+                <div class="col col-1" data-label="Race times">Ogni ora. Partenza ore 2:30</div>
+            </li>
+            <!-- SERIE USF -->
+            <li class="table-row text-center row_white">
+                <div class="col col-1" data-label="Classe">D</div>
+                <div class="col col-1 click-here_usf" data-label="Serie">Cooper Tires USF 2000 Championship - Fixed</div>
+                <div id="prova1" class="col col-3" data-label="Tracciati">Tracciato 1 prova dal 24 al 26 agosto</div>
+                <!-- <div id="prova2_usf" class="col col-3" data-label="Tracciati">Tracciato 2 prova dal 27 al 29</div> -->
+                <div id="prova3" class="col col-3" data-label="Tracciati">Tracciato 3 prova dal 30 agosto al 1 settembre</div>
+                <div class="col col-1" data-label="Auto">USF 2000</div>
+                <div class="col col-1" data-label="Inizio">24-08-2021</div>
+                <div class="col col-1" data-label="Lunghezza">15L</div>
+                <div class="col col-1" data-label="Race times">Ogni ora. Partenza ore 2:30</div>
+            </li>
+            <!-- SERIE ADVANCED MAZDA -->
+            <li class="table-row text-center row_grey">
+                <div class="col col-1" data-label="Classe">C</div>
+                <div class="col col-1 click-here_adma" data-label="Serie">Advanced Mazda MX-5 Cup Series</div>
+                <div id="prova1" class="col col-3" data-label="Tracciati">Tracciato 1 prova dal 24 al 26 agosto</div>
+                <!-- <div id="prova2_adma" class="col col-3" data-label="Tracciati">Tracciato 2 prova dal 27 al 29</div> -->
+                <div id="prova3" class="col col-3" data-label="Tracciati">Tracciato 3 prova dal 30 agosto al 1 settembre</div>
+                <div class="col col-1" data-label="Auto">Global Mazda MX-5 Cup</div>
+                <div class="col col-1" data-label="Inizio">24-08-2021</div>
+                <div class="col col-1" data-label="Lunghezza">15L</div>
+                <div class="col col-1" data-label="Race times">Ogni ora. Partenza ore 2:30</div>
+            </li>
+            <!-- SERIE F3 CHAMPIONSHIP -->
+            <li class="table-row text-center row_white">
+                <div class="col col-1" data-label="Classe">C</div>
+                <div class="col col-1 click-here_f3c" data-label="Serie">Apex Racing Academy F3 Championship</div>
+                <div id="prova1" class="col col-3" data-label="Tracciati">Tracciato 1 prova dal 24 al 26 agosto</div>
+                <!-- <div id="prova2_f3c" class="col col-3" data-label="Tracciati">Tracciato 2 prova dal 27 al 29</div> -->
+                <div id="prova3" class="col col-3" data-label="Tracciati">Tracciato 3 prova dal 30 agosto al 1 settembre</div>
+                <div class="col col-1" data-label="Auto">Dallara F3</div>
+                <div class="col col-1" data-label="Inizio">24-08-2021</div>
+                <div class="col col-1" data-label="Lunghezza">15L</div>
+                <div class="col col-1" data-label="Race times">Ogni ora. Partenza ore 2:30</div>
+            </li>
+            <!-- SERIE F3 FIXED -->
+            <li class="table-row text-center row_grey">
+                <div class="col col-1" data-label="Classe">C</div>
+                <div class="col col-1 click-here_f3f" data-label="Serie">iRacing F3 Championship - Fixed</div>
+                <div id="prova1" class="col col-3" data-label="Tracciati">Tracciato 1 prova dal 24 al 26 agosto</div>
+                <!-- <div id="prova2_f3f" class="col col-3" data-label="Tracciati">Tracciato 2 prova dal 27 al 29</div> -->
+                <div id="prova3" class="col col-3" data-label="Tracciati">Tracciato 3 prova dal 30 agosto al 1 settembre</div>
+                <div class="col col-1" data-label="Auto">Dallara F3</div>
+                <div class="col col-1" data-label="Inizio">24-08-2021</div>
+                <div class="col col-1" data-label="Lunghezza">15L</div>
+                <div class="col col-1" data-label="Race times">Ogni ora. Partenza ore 2:30</div>
+            </li>
+            <!-- SERIE RADICAL -->
+            <li class="table-row text-center row_white">
+                <div class="col col-1" data-label="Classe">C</div>
+                <div class="col col-1 click-here_rad" data-label="Serie">Radical Racing Challenge C</div>
+                <div id="prova1" class="col col-3" data-label="Tracciati">Tracciato 1 prova dal 24 al 26 agosto</div>
+                <!-- <div id="prova2_rad" class="col col-3" data-label="Tracciati">Tracciato 2 prova dal 27 al 29</div> -->
+                <div id="prova3" class="col col-3" data-label="Tracciati">Tracciato 3 prova dal 30 agosto al 1 settembre</div>
+                <div class="col col-1" data-label="Auto">Radical SR8</div>
+                <div class="col col-1" data-label="Inizio">24-08-2021</div>
+                <div class="col col-1" data-label="Lunghezza">15L</div>
+                <div class="col col-1" data-label="Race times">Ogni ora. Partenza ore 2:30</div>
+            </li>
+            <!-- SERIE VRS ENDURANCE -->
+            <li class="table-row text-center row_grey">
+                <div class="col col-1" data-label="Classe">C</div>
+                <div class="col col-1 click-here_vrsend" data-label="Serie">VRS GT Endurance Series</div>
+                <div id="prova1" class="col col-3" data-label="Tracciati">Tracciato 1 prova dal 24 al 26 agosto</div>
+                <!-- <div id="prova2_skip" class="col col-3" data-label="Tracciati">Tracciato 2 prova dal 27 al 29</div> -->
+                <div id="prova3" class="col col-3" data-label="Tracciati">Tracciato 3 prova dal 30 agosto al 1 settembre</div>
+                <div class="col col-1 click-here_gt3car" data-label="Auto">GT3 Class</div>
+                <div class="col col-1" data-label="Inizio">24-08-2021</div>
+                <div class="col col-1" data-label="Lunghezza">15L</div>
+                <div class="col col-1" data-label="Race times">Ogni ora. Partenza ore 2:30</div>
+            </li>
+            <!-- SERIE GT3 FIXED -->
+            <li class="table-row text-center row_white">
+                <div class="col col-1" data-label="Classe">B</div>
+                <div class="col col-1 click-here_gt3f" data-label="Serie">Fanatec GT3 Challenge - Fixed</div>
+                <div id="prova1" class="col col-3" data-label="Tracciati">Tracciato 1 prova dal 24 al 26 agosto</div>
+                <!-- <div id="prova2_gt3f" class="col col-3" data-label="Tracciati">Tracciato 2 prova dal 27 al 29</div> -->
+                <div id="prova3" class="col col-3" data-label="Tracciati">Tracciato 3 prova dal 30 agosto al 1 settembre</div>
+                <div class="col col-1 click-here_gt3car" data-label="Auto">GT3 Class</div>
+                <div class="col col-1" data-label="Inizio">24-08-2021</div>
+                <div class="col col-1" data-label="Lunghezza">15L</div>
+                <div class="col col-1" data-label="Race times">Ogni ora. Partenza ore 2:30</div>
+            </li>
+            <!-- SERIE GTE ENDURANCE -->
+            <li class="table-row text-center row_grey">
+                <div class="col col-1" data-label="Classe">B</div>
+                <div class="col col-1 click-here_gte" data-label="Serie">GTE endurance Series</div>
+                <div id="prova1" class="col col-3" data-label="Tracciati">Tracciato 1 prova dal 24 al 26 agosto</div>
+                <!-- <div id="prova2_end" class="col col-3" data-label="Tracciati">Tracciato 2 prova dal 27 al 29</div> -->
+                <div id="prova3" class="col col-3" data-label="Tracciati">Tracciato 3 prova dal 30 agosto al 1 settembre</div>
+                <div class="col col-1 click-here_gtecar" data-label="Auto">GTE Class</div>
+                <div class="col col-1" data-label="Inizio">24-08-2021</div>
+                <div class="col col-1" data-label="Lunghezza">15L</div>
+                <div class="col col-1" data-label="Race times">Ogni ora. Partenza ore 2:30</div>
+            </li>
+            <!-- SERIE IMSA -->
+            <li class="table-row text-center row_white">
+                <div class="col col-1" data-label="Classe">B</div>
+                <div class="col col-1 click-here_ims" data-label="Serie">IMSA Hagerty iRacing Series</div>
+                <div id="prova1" class="col col-3" data-label="Tracciati">Tracciato 1 prova dal 24 al 26 agosto</div>
+                <!-- <div id="prova2_ims" class="col col-3" data-label="Tracciati">Tracciato 2 prova dal 27 al 29</div> -->
+                <div id="prova3" class="col col-3" data-label="Tracciati">Tracciato 3 prova dal 30 agosto al 1 settembre</div>
+                <div class="col col-1" data-label="Auto">Formula Vee</div>
+                <div class="col col-1" data-label="Inizio">24-08-2021</div>
+                <div class="col col-1" data-label="Lunghezza">15L</div>
+                <div class="col col-1" data-label="Race times">Ogni ora. Partenza ore 2:30</div>
+            </li>
+            <!-- SERIE LMP2 -->
+            <li class="table-row text-center row_grey">
+                <div class="col col-1" data-label="Classe">B</div>
+                <div class="col col-1 click-here_lmp2" data-label="Serie">LMP2 Prototype Challenge - Fixed</div>
+                <div id="prova1" class="col col-3" data-label="Tracciati">Tracciato 1 prova dal 24 al 26 agosto</div>
+                <!-- <div id="prova2_lmp2" class="col col-3" data-label="Tracciati">Tracciato 2 prova dal 27 al 29</div> -->
+                <div id="prova3" class="col col-3" data-label="Tracciati">Tracciato 3 prova dal 30 agosto al 1 settembre</div>
+                <div class="col col-1" data-label="Auto">Formula Vee</div>
+                <div class="col col-1" data-label="Inizio">24-08-2021</div>
+                <div class="col col-1" data-label="Lunghezza">15L</div>
+                <div class="col col-1" data-label="Race times">Ogni ora. Partenza ore 2:30</div>
+            </li>
+            <!-- SERIE VRS SPRINT -->
+            <li class="table-row text-center row_white">
+                <div class="col col-1" data-label="Classe">B</div>
+                <div class="col col-1 click-here_vrss" data-label="Serie">VRS GT Sprint Series</div>
+                <div id="prova1" class="col col-3" data-label="Tracciati">Tracciato 1 prova dal 24 al 26 agosto</div>
+                <!-- <div id="prova2_vrss" class="col col-3" data-label="Tracciati">Tracciato 2 prova dal 27 al 29</div> -->
+                <div id="prova3" class="col col-3" data-label="Tracciati">Tracciato 3 prova dal 30 agosto al 1 settembre</div>
+                <div class="col col-1 click-here_gt3car" data-label="Auto">GT3 Class</div>
+                <div class="col col-1" data-label="Inizio">24-08-2021</div>
+                <div class="col col-1" data-label="Lunghezza">15L</div>
+                <div class="col col-1" data-label="Race times">Ogni ora. Partenza ore 2:30</div>
+            </li>
+            <!-- SERIE PURE DRIVING -->
+            <li class="table-row text-center row_grey">
+                <div class="col col-1" data-label="Classe">A</div>
+                <div class="col col-1 click-here_pur" data-label="Serie">Pure Driving School European Sprint Series</div>
+                <div id="prova1" class="col col-3" data-label="Tracciati">Tracciato 1 prova dal 24 al 26 agosto</div>
+                <!-- <div id="prova2_pur" class="col col-3" data-label="Tracciati">Tracciato 2 prova dal 27 al 29</div> -->
+                <div id="prova3" class="col col-3" data-label="Tracciati">Tracciato 3 prova dal 30 agosto al 1 settembre</div>
+                <div class="col col-1" data-label="Auto">Formula Vee</div>
+                <div class="col col-1" data-label="Inizio">24-08-2021</div>
+                <div class="col col-1" data-label="Lunghezza">15L</div>
+                <div class="col col-1" data-label="Race times">Ogni ora. Partenza ore 2:30</div>
+            </li>
+
+
+
+
+
+        </ul>
+        <!-- END TABLE -->
+        
+    <!-- POPUP -->
+    <div class="custom-model-main">
+        <div class="custom-model-inner">        
+        <div class="close-btn">×</div>
+            <div class="custom-model-wrap">
+                <div class="pop-up-content-wrap">
+                    <div class="row">
+                        <h4>Tracciati per Fanatec Global Mazda MX-5 Cup</h4>
+                    </div>
+                    <div class="row pop-up-top">
+                        <div class="col-xs-2">settimana</div>
+                        <div class="col-xs-4">tracciato</div>
+                        <div class="col-xs-2">inizio</div>
+                        <div class="col-xs-2">fine</div>
+                        <div class="col-xs-1">lunghezza</div>
+                    </div>
+                    <div class="row" id="settimana1">
+                        <div class="col-xs-2"><p>settimana 1</p></div>
+                        <div class="col-xs-4">Tracciato 1 prova dal 24 al 26 agosto</div>
+                        <div class="col-xs-2">24-08-2021</div>
+                        <div class="col-xs-2">25-08-2021</div>
+                        <div class="col-xs-1">12L</div>
+                    </div>
+                    <!-- END ROW SETTIMANA 1 -->
+                    <div class="row" id="settimana2">
+                        <div class="col-xs-2"><p>settimana 2</p></div>
+                        <div class="col-xs-4">Tracciato 2 prova dal 27 al 29</div>
+                        <div class="col-xs-2">27-08-202</div>
+                        <div class="col-xs-2">29-08-2021</div>
+                        <div class="col-xs-1">12L</div>
+                    </div>
+                    <!-- END ROW SETTIMANA 2-->
+                    <div class="row" id="settimana3">
+                        <div class="col-xs-2"><p>settimana 3</p></div>
+                        <div class="col-xs-4">Tracciato 3 prova dal 30 agosto al 1 settembre</div>
+                        <div class="col-xs-2">30-08-2021</div>
+                        <div class="col-xs-2">01-09-2021</div>
+                        <div class="col-xs-1">12L</div>
+                    </div>
+                    <!-- END ROW SETTIMANA 3-->
+                </div>
+            </div>  
+        </div>  
+        <div class="bg-overlay"></div>
+    </div>
+
+    <!-- VEE POPUP -->
+    <div class="custom-model-main_vee">
+        <div class="custom-model-inner">        
+        <div class="close-btn">×</div>
+            <div class="custom-model-wrap">
+                <div class="pop-up-content-wrap">
+                    <div class="row">
+                        <h4>Tracciati per Formula Vee</h4>
+                    </div>
+                    <div class="row pop-up-top">
+                        <div class="col-xs-2">settimana</div>
+                        <div class="col-xs-4">tracciato</div>
+                        <div class="col-xs-2">inizio</div>
+                        <div class="col-xs-2">fine</div>
+                        <div class="col-xs-1">lunghezza</div>
+                    </div>
+                    <div class="row" id="settimana1_vee">
+                        <div class="col-xs-2"><p>settimana 1</p></div>
+                        <div class="col-xs-4">Tracciato 1 prova dal 24 al 26 agosto</div>
+                        <div class="col-xs-2">24-08-2021</div>
+                        <div class="col-xs-2">25-08-2021</div>
+                        <div class="col-xs-1">12L</div>
+                    </div>
+                    <!-- END ROW SETTIMANA 1 -->
+                    <div class="row" id="settimana2">
+                        <div class="col-xs-2"><p>settimana 2</p></div>
+                        <div class="col-xs-4">Tracciato 2 prova dal 27 al 29</div>
+                        <div class="col-xs-2">27-08-202</div>
+                        <div class="col-xs-2">29-08-2021</div>
+                        <div class="col-xs-1">12L</div>
+                    </div>
+                    <!-- END ROW SETTIMANA 2-->
+                    <div class="row" id="settimana3">
+                        <div class="col-xs-2"><p>settimana 3</p></div>
+                        <div class="col-xs-4">Tracciato 3 prova dal 30 agosto al 1 settembre</div>
+                        <div class="col-xs-2">30-08-2021</div>
+                        <div class="col-xs-2">01-09-2021</div>
+                        <div class="col-xs-1">12L</div>
+                    </div>
+                    <!-- END ROW SETTIMANA 3-->
+                </div>
+            </div>  
+        </div>  
+        <div class="bg-overlay"></div>
+    </div>
+    <!-- FERRARI GT3 POPUP -->
+    <div class="custom-model-main_fer">
+        <div class="custom-model-inner">        
+        <div class="close-btn">×</div>
+            <div class="custom-model-wrap">
+                <div class="pop-up-content-wrap">
+                    <div class="row">
+                        <h4>Tracciati per Ferrari GT3 Challenge - Fixed</h4>
+                    </div>
+                    <div class="row pop-up-top">
+                        <div class="col-xs-2">settimana</div>
+                        <div class="col-xs-4">tracciato</div>
+                        <div class="col-xs-2">inizio</div>
+                        <div class="col-xs-2">fine</div>
+                        <div class="col-xs-1">lunghezza</div>
+                    </div>
+                    <div class="row" id="settimana1_fer">
+                        <div class="col-xs-2"><p>settimana 1</p></div>
+                        <div class="col-xs-4">Tracciato 1 prova dal 24 al 26 agosto</div>
+                        <div class="col-xs-2">24-08-2021</div>
+                        <div class="col-xs-2">25-08-2021</div>
+                        <div class="col-xs-1">12L</div>
+                    </div>
+                    <!-- END ROW SETTIMANA 1 -->
+                    <div class="row" id="settimana2">
+                        <div class="col-xs-2"><p>settimana 2</p></div>
+                        <div class="col-xs-4">Tracciato 2 prova dal 27 al 29</div>
+                        <div class="col-xs-2">27-08-202</div>
+                        <div class="col-xs-2">29-08-2021</div>
+                        <div class="col-xs-1">12L</div>
+                    </div>
+                    <!-- END ROW SETTIMANA 2-->
+                    <div class="row" id="settimana3">
+                        <div class="col-xs-2"><p>settimana 3</p></div>
+                        <div class="col-xs-4">Tracciato 3 prova dal 30 agosto al 1 settembre</div>
+                        <div class="col-xs-2">30-08-2021</div>
+                        <div class="col-xs-2">01-09-2021</div>
+                        <div class="col-xs-1">12L</div>
+                    </div>
+                    <!-- END ROW SETTIMANA 3-->
+                </div>
+            </div>  
+        </div>  
+        <div class="bg-overlay"></div>
+    </div>
+    <!-- SKIPPY POPUP -->
+    <div class="custom-model-main_skip">
+        <div class="custom-model-inner">        
+        <div class="close-btn">×</div>
+            <div class="custom-model-wrap">
+                <div class="pop-up-content-wrap">
+                    <div class="row">
+                        <h4>Tracciati per Skip Barber Race Series</h4>
+                    </div>
+                    <div class="row pop-up-top">
+                        <div class="col-xs-2">settimana</div>
+                        <div class="col-xs-4">tracciato</div>
+                        <div class="col-xs-2">inizio</div>
+                        <div class="col-xs-2">fine</div>
+                        <div class="col-xs-1">lunghezza</div>
+                    </div>
+                    <div class="row" id="settimana1_skip">
+                        <div class="col-xs-2"><p>settimana 1</p></div>
+                        <div class="col-xs-4">Tracciato 1 prova dal 24 al 26 agosto</div>
+                        <div class="col-xs-2">24-08-2021</div>
+                        <div class="col-xs-2">25-08-2021</div>
+                        <div class="col-xs-1">12L</div>
+                    </div>
+                    <!-- END ROW SETTIMANA 1 -->
+                    <div class="row" id="settimana2">
+                        <div class="col-xs-2"><p>settimana 2</p></div>
+                        <div class="col-xs-4">Tracciato 2 prova dal 27 al 29</div>
+                        <div class="col-xs-2">27-08-202</div>
+                        <div class="col-xs-2">29-08-2021</div>
+                        <div class="col-xs-1">12L</div>
+                    </div>
+                    <!-- END ROW SETTIMANA 2-->
+                    <div class="row" id="settimana3">
+                        <div class="col-xs-2"><p>settimana 3</p></div>
+                        <div class="col-xs-4">Tracciato 3 prova dal 30 agosto al 1 settembre</div>
+                        <div class="col-xs-2">30-08-2021</div>
+                        <div class="col-xs-2">01-09-2021</div>
+                        <div class="col-xs-1">12L</div>
+                    </div>
+                    <!-- END ROW SETTIMANA 3-->
+                </div>
+            </div>  
+        </div>  
+        <div class="bg-overlay"></div>
+    </div>
+    <!-- USF POPUP -->
+    <div class="custom-model-main_usf">
+        <div class="custom-model-inner">        
+        <div class="close-btn">×</div>
+            <div class="custom-model-wrap">
+                <div class="pop-up-content-wrap">
+                    <div class="row">
+                        <h4>Tracciati per usf</h4>
+                    </div>
+                    <div class="row pop-up-top">
+                        <div class="col-xs-2">settimana</div>
+                        <div class="col-xs-4">tracciato</div>
+                        <div class="col-xs-2">inizio</div>
+                        <div class="col-xs-2">fine</div>
+                        <div class="col-xs-1">lunghezza</div>
+                    </div>
+                    <div class="row" id="settimana1_usf">
+                        <div class="col-xs-2"><p>settimana 1</p></div>
+                        <div class="col-xs-4">Tracciato 1 prova dal 24 al 26 agosto</div>
+                        <div class="col-xs-2">24-08-2021</div>
+                        <div class="col-xs-2">25-08-2021</div>
+                        <div class="col-xs-1">12L</div>
+                    </div>
+                    <!-- END ROW SETTIMANA 1 -->
+                    <div class="row" id="settimana2">
+                        <div class="col-xs-2"><p>settimana 2</p></div>
+                        <div class="col-xs-4">Tracciato 2 prova dal 27 al 29</div>
+                        <div class="col-xs-2">27-08-202</div>
+                        <div class="col-xs-2">29-08-2021</div>
+                        <div class="col-xs-1">12L</div>
+                    </div>
+                    <!-- END ROW SETTIMANA 2 -->
+                    <div class="row" id="settimana3">
+                        <div class="col-xs-2"><p>settimana 3</p></div>
+                        <div class="col-xs-4">Tracciato 3 prova dal 30 agosto al 1 settembre</div>
+                        <div class="col-xs-2">30-08-2021</div>
+                        <div class="col-xs-2">01-09-2021</div>
+                        <div class="col-xs-1">12L</div>
+                    </div>
+                    <!-- END ROW SETTIMANA 3 -->
+                </div>
+            </div>  
+        </div>  
+        <div class="bg-overlay"></div>
+    </div>
+    <!-- ADVANCED MAZDA POPUP -->
+    <div class="custom-model-main_adma">
+        <div class="custom-model-inner">        
+        <div class="close-btn">×</div>
+            <div class="custom-model-wrap">
+                <div class="pop-up-content-wrap">
+                    <div class="row">
+                        <h4>Tracciati per advanced</h4>
+                    </div>
+                    <div class="row pop-up-top">
+                        <div class="col-xs-2">settimana</div>
+                        <div class="col-xs-4">tracciato</div>
+                        <div class="col-xs-2">inizio</div>
+                        <div class="col-xs-2">fine</div>
+                        <div class="col-xs-1">lunghezza</div>
+                    </div>
+                    <div class="row" id="settimana1_adma">
+                        <div class="col-xs-2"><p>settimana 1</p></div>
+                        <div class="col-xs-4">Tracciato 1 prova dal 24 al 26 agosto</div>
+                        <div class="col-xs-2">24-08-2021</div>
+                        <div class="col-xs-2">25-08-2021</div>
+                        <div class="col-xs-1">12L</div>
+                    </div>
+                    <!-- END ROW SETTIMANA 1 -->
+                    <div class="row" id="settimana2">
+                        <div class="col-xs-2"><p>settimana 2</p></div>
+                        <div class="col-xs-4">Tracciato 2 prova dal 27 al 29</div>
+                        <div class="col-xs-2">27-08-202</div>
+                        <div class="col-xs-2">29-08-2021</div>
+                        <div class="col-xs-1">12L</div>
+                    </div>
+                    <!-- END ROW SETTIMANA 2 -->
+                    <div class="row" id="settimana3">
+                        <div class="col-xs-2"><p>settimana 3</p></div>
+                        <div class="col-xs-4">Tracciato 3 prova dal 30 agosto al 1 settembre</div>
+                        <div class="col-xs-2">30-08-2021</div>
+                        <div class="col-xs-2">01-09-2021</div>
+                        <div class="col-xs-1">12L</div>
+                    </div>
+                    <!-- END ROW SETTIMANA 3 -->
+                </div>
+            </div>  
+        </div>  
+        <div class="bg-overlay"></div>
+    </div>
+    <!-- F3 CHAMPIONSHIP POPUP -->
+    <div class="custom-model-main_f3c">
+        <div class="custom-model-inner">        
+        <div class="close-btn">×</div>
+            <div class="custom-model-wrap">
+                <div class="pop-up-content-wrap">
+                    <div class="row">
+                        <h4>Tracciati per f3 championship</h4>
+                    </div>
+                    <div class="row pop-up-top">
+                        <div class="col-xs-2">settimana</div>
+                        <div class="col-xs-4">tracciato</div>
+                        <div class="col-xs-2">inizio</div>
+                        <div class="col-xs-2">fine</div>
+                        <div class="col-xs-1">lunghezza</div>
+                    </div>
+                    <div class="row" id="settimana1_f3c">
+                        <div class="col-xs-2"><p>settimana 1</p></div>
+                        <div class="col-xs-4">Tracciato 1 prova dal 24 al 26 agosto</div>
+                        <div class="col-xs-2">24-08-2021</div>
+                        <div class="col-xs-2">25-08-2021</div>
+                        <div class="col-xs-1">12L</div>
+                    </div>
+                    <!-- END ROW SETTIMANA 1 -->
+                    <div class="row" id="settimana2">
+                        <div class="col-xs-2"><p>settimana 2</p></div>
+                        <div class="col-xs-4">Tracciato 2 prova dal 27 al 29</div>
+                        <div class="col-xs-2">27-08-202</div>
+                        <div class="col-xs-2">29-08-2021</div>
+                        <div class="col-xs-1">12L</div>
+                    </div>
+                    <!-- END ROW SETTIMANA 2 -->
+                    <div class="row" id="settimana3">
+                        <div class="col-xs-2"><p>settimana 3</p></div>
+                        <div class="col-xs-4">Tracciato 3 prova dal 30 agosto al 1 settembre</div>
+                        <div class="col-xs-2">30-08-2021</div>
+                        <div class="col-xs-2">01-09-2021</div>
+                        <div class="col-xs-1">12L</div>
+                    </div>
+                    <!-- END ROW SETTIMANA 3 -->
+                </div>
+            </div>  
+        </div>  
+        <div class="bg-overlay"></div>
+    </div>
+    <!-- F3 FIXED POPUP -->
+    <div class="custom-model-main_f3f">
+        <div class="custom-model-inner">        
+        <div class="close-btn">×</div>
+            <div class="custom-model-wrap">
+                <div class="pop-up-content-wrap">
+                    <div class="row">
+                        <h4>Tracciati per f3 fixed</h4>
+                    </div>
+                    <div class="row pop-up-top">
+                        <div class="col-xs-2">settimana</div>
+                        <div class="col-xs-4">tracciato</div>
+                        <div class="col-xs-2">inizio</div>
+                        <div class="col-xs-2">fine</div>
+                        <div class="col-xs-1">lunghezza</div>
+                    </div>
+                    <div class="row" id="settimana1_f3f">
+                        <div class="col-xs-2"><p>settimana 1</p></div>
+                        <div class="col-xs-4">Tracciato 1 prova dal 24 al 26 agosto</div>
+                        <div class="col-xs-2">24-08-2021</div>
+                        <div class="col-xs-2">25-08-2021</div>
+                        <div class="col-xs-1">12L</div>
+                    </div>
+                    <!-- END ROW SETTIMANA 1 -->
+                    <div class="row" id="settimana2">
+                        <div class="col-xs-2"><p>settimana 2</p></div>
+                        <div class="col-xs-4">Tracciato 2 prova dal 27 al 29</div>
+                        <div class="col-xs-2">27-08-202</div>
+                        <div class="col-xs-2">29-08-2021</div>
+                        <div class="col-xs-1">12L</div>
+                    </div>
+                    <!-- END ROW SETTIMANA 2 -->
+                    <div class="row" id="settimana3">
+                        <div class="col-xs-2"><p>settimana 3</p></div>
+                        <div class="col-xs-4">Tracciato 3 prova dal 30 agosto al 1 settembre</div>
+                        <div class="col-xs-2">30-08-2021</div>
+                        <div class="col-xs-2">01-09-2021</div>
+                        <div class="col-xs-1">12L</div>
+                    </div>
+                    <!-- END ROW SETTIMANA 3 -->
+                </div>
+            </div>  
+        </div>  
+        <div class="bg-overlay"></div>
+    </div>
+    <!-- RADICAL POPUP -->
+    <div class="custom-model-main_rad">
+        <div class="custom-model-inner">        
+        <div class="close-btn">×</div>
+            <div class="custom-model-wrap">
+                <div class="pop-up-content-wrap">
+                    <div class="row">
+                        <h4>Tracciati per radical</h4>
+                    </div>
+                    <div class="row pop-up-top">
+                        <div class="col-xs-2">settimana</div>
+                        <div class="col-xs-4">tracciato</div>
+                        <div class="col-xs-2">inizio</div>
+                        <div class="col-xs-2">fine</div>
+                        <div class="col-xs-1">lunghezza</div>
+                    </div>
+                    <div class="row" id="settimana1_rad">
+                        <div class="col-xs-2"><p>settimana 1</p></div>
+                        <div class="col-xs-4">Tracciato 1 prova dal 24 al 26 agosto</div>
+                        <div class="col-xs-2">24-08-2021</div>
+                        <div class="col-xs-2">25-08-2021</div>
+                        <div class="col-xs-1">12L</div>
+                    </div>
+                    <!-- END ROW SETTIMANA 1 -->
+                    <div class="row" id="settimana2">
+                        <div class="col-xs-2"><p>settimana 2</p></div>
+                        <div class="col-xs-4">Tracciato 2 prova dal 27 al 29</div>
+                        <div class="col-xs-2">27-08-202</div>
+                        <div class="col-xs-2">29-08-2021</div>
+                        <div class="col-xs-1">12L</div>
+                    </div>
+                    <!-- END ROW SETTIMANA 2 -->
+                    <div class="row" id="settimana3">
+                        <div class="col-xs-2"><p>settimana 3</p></div>
+                        <div class="col-xs-4">Tracciato 3 prova dal 30 agosto al 1 settembre</div>
+                        <div class="col-xs-2">30-08-2021</div>
+                        <div class="col-xs-2">01-09-2021</div>
+                        <div class="col-xs-1">12L</div>
+                    </div>
+                    <!-- END ROW SETTIMANA 3 -->
+                </div>
+            </div>  
+        </div>  
+        <div class="bg-overlay"></div>
+    </div>
+    <!-- VRS ENDURANCE POPUP -->
+    <div class="custom-model-main_vrsend">
+        <div class="custom-model-inner">        
+        <div class="close-btn">×</div>
+            <div class="custom-model-wrap">
+                <div class="pop-up-content-wrap">
+                    <div class="row">
+                        <h4>Tracciati per vrs</h4>
+                    </div>
+                    <div class="row pop-up-top">
+                        <div class="col-xs-2">settimana</div>
+                        <div class="col-xs-4">tracciato</div>
+                        <div class="col-xs-2">inizio</div>
+                        <div class="col-xs-2">fine</div>
+                        <div class="col-xs-1">lunghezza</div>
+                    </div>
+                    <div class="row" id="settimana1_vrsend">
+                        <div class="col-xs-2"><p>settimana 1</p></div>
+                        <div class="col-xs-4">Tracciato 1 prova dal 24 al 26 agosto</div>
+                        <div class="col-xs-2">24-08-2021</div>
+                        <div class="col-xs-2">25-08-2021</div>
+                        <div class="col-xs-1">12L</div>
+                    </div>
+                    <!-- END ROW SETTIMANA 1 -->
+                    <div class="row" id="settimana2">
+                        <div class="col-xs-2"><p>settimana 2</p></div>
+                        <div class="col-xs-4">Tracciato 2 prova dal 27 al 29</div>
+                        <div class="col-xs-2">27-08-202</div>
+                        <div class="col-xs-2">29-08-2021</div>
+                        <div class="col-xs-1">12L</div>
+                    </div>
+                    <!-- END ROW SETTIMANA 2 -->
+                    <div class="row" id="settimana3">
+                        <div class="col-xs-2"><p>settimana 3</p></div>
+                        <div class="col-xs-4">Tracciato 3 prova dal 30 agosto al 1 settembre</div>
+                        <div class="col-xs-2">30-08-2021</div>
+                        <div class="col-xs-2">01-09-2021</div>
+                        <div class="col-xs-1">12L</div>
+                    </div>
+                    <!-- END ROW SETTIMANA 3 -->
+                </div>
+            </div>  
+        </div>  
+        <div class="bg-overlay"></div>
+    </div>
+    <!-- GT3 FIXED POPUP -->
+    <div class="custom-model-main_gt3car">
+        <div class="custom-model-inner">        
+        <div class="close-btn">×</div>
+            <div class="custom-model-wrap">
+                <div class="pop-up-content-wrap">
+                    <div class="row">
+                        <h4>auto per gt</h4>
+                    </div>
+                    <div class="row pop-up-top">
+                        <div class="col-xs-2">settimana</div>
+                        <div class="col-xs-4">tracciato</div>
+                        <div class="col-xs-2">inizio</div>
+                        <div class="col-xs-2">fine</div>
+                        <div class="col-xs-1">lunghezza</div>
+                    </div>
+                </div>
+            </div>  
+        </div>  
+        <div class="bg-overlay"></div>
+    </div>
+    <!-- GTE ENDURANCE POPUP -->
+    <div class="custom-model-main_gte">
+        <div class="custom-model-inner">        
+        <div class="close-btn">×</div>
+            <div class="custom-model-wrap">
+                <div class="pop-up-content-wrap">
+                    <div class="row">
+                        <h4>Tracciati per gte </h4>
+                    </div>
+                    <div class="row pop-up-top">
+                        <div class="col-xs-2">settimana</div>
+                        <div class="col-xs-4">tracciato</div>
+                        <div class="col-xs-2">inizio</div>
+                        <div class="col-xs-2">fine</div>
+                        <div class="col-xs-1">lunghezza</div>
+                    </div>
+                    <div class="row" id="settimana1_gte">
+                        <div class="col-xs-2"><p>settimana 1</p></div>
+                        <div class="col-xs-4">Tracciato 1 prova dal 24 al 26 agosto</div>
+                        <div class="col-xs-2">24-08-2021</div>
+                        <div class="col-xs-2">25-08-2021</div>
+                        <div class="col-xs-1">12L</div>
+                    </div>
+                    <!-- END ROW SETTIMANA 1 -->
+                    <div class="row" id="settimana2">
+                        <div class="col-xs-2"><p>settimana 2</p></div>
+                        <div class="col-xs-4">Tracciato 2 prova dal 27 al 29</div>
+                        <div class="col-xs-2">27-08-202</div>
+                        <div class="col-xs-2">29-08-2021</div>
+                        <div class="col-xs-1">12L</div>
+                    </div>
+                    <!-- END ROW SETTIMANA 2 -->
+                    <div class="row" id="settimana3">
+                        <div class="col-xs-2"><p>settimana 3</p></div>
+                        <div class="col-xs-4">Tracciato 3 prova dal 30 agosto al 1 settembre</div>
+                        <div class="col-xs-2">30-08-2021</div>
+                        <div class="col-xs-2">01-09-2021</div>
+                        <div class="col-xs-1">12L</div>
+                    </div>
+                    <!-- END ROW SETTIMANA 3 -->
+                </div>
+            </div>  
+        </div>  
+        <div class="bg-overlay"></div>
+    </div>
+    <!--IMSA POPUP -->
+    <div class="custom-model-main_ims">
+        <div class="custom-model-inner">        
+        <div class="close-btn">×</div>
+            <div class="custom-model-wrap">
+                <div class="pop-up-content-wrap">
+                    <div class="row">
+                        <h4>Tracciati per imsa </h4>
+                    </div>
+                    <div class="row pop-up-top">
+                        <div class="col-xs-2">settimana</div>
+                        <div class="col-xs-4">tracciato</div>
+                        <div class="col-xs-2">inizio</div>
+                        <div class="col-xs-2">fine</div>
+                        <div class="col-xs-1">lunghezza</div>
+                    </div>
+                    <div class="row" id="settimana1_ims">
+                        <div class="col-xs-2"><p>settimana 1</p></div>
+                        <div class="col-xs-4">Tracciato 1 prova dal 24 al 26 agosto</div>
+                        <div class="col-xs-2">24-08-2021</div>
+                        <div class="col-xs-2">25-08-2021</div>
+                        <div class="col-xs-1">12L</div>
+                    </div>
+                    <!-- END ROW SETTIMANA 1 -->
+                    <div class="row" id="settimana2">
+                        <div class="col-xs-2"><p>settimana 2</p></div>
+                        <div class="col-xs-4">Tracciato 2 prova dal 27 al 29</div>
+                        <div class="col-xs-2">27-08-202</div>
+                        <div class="col-xs-2">29-08-2021</div>
+                        <div class="col-xs-1">12L</div>
+                    </div>
+                    <!-- END ROW SETTIMANA 2 -->
+                    <div class="row" id="settimana3">
+                        <div class="col-xs-2"><p>settimana 3</p></div>
+                        <div class="col-xs-4">Tracciato 3 prova dal 30 agosto al 1 settembre</div>
+                        <div class="col-xs-2">30-08-2021</div>
+                        <div class="col-xs-2">01-09-2021</div>
+                        <div class="col-xs-1">12L</div>
+                    </div>
+                    <!-- END ROW SETTIMANA 3 -->
+                </div>
+            </div>  
+        </div>  
+        <div class="bg-overlay"></div>
+    </div>
+    <!--LMP2 POPUP -->
+    <div class="custom-model-main_lmp2">
+        <div class="custom-model-inner">        
+        <div class="close-btn">×</div>
+            <div class="custom-model-wrap">
+                <div class="pop-up-content-wrap">
+                    <div class="row">
+                        <h4>Tracciati per lmp2 </h4>
+                    </div>
+                    <div class="row pop-up-top">
+                        <div class="col-xs-2">settimana</div>
+                        <div class="col-xs-4">tracciato</div>
+                        <div class="col-xs-2">inizio</div>
+                        <div class="col-xs-2">fine</div>
+                        <div class="col-xs-1">lunghezza</div>
+                    </div>
+                    <div class="row" id="settimana1_lmp2">
+                        <div class="col-xs-2"><p>settimana 1</p></div>
+                        <div class="col-xs-4">Tracciato 1 prova dal 24 al 26 agosto</div>
+                        <div class="col-xs-2">24-08-2021</div>
+                        <div class="col-xs-2">25-08-2021</div>
+                        <div class="col-xs-1">12L</div>
+                    </div>
+                    <!-- END ROW SETTIMANA 1 -->
+                    <div class="row" id="settimana2">
+                        <div class="col-xs-2"><p>settimana 2</p></div>
+                        <div class="col-xs-4">Tracciato 2 prova dal 27 al 29</div>
+                        <div class="col-xs-2">27-08-202</div>
+                        <div class="col-xs-2">29-08-2021</div>
+                        <div class="col-xs-1">12L</div>
+                    </div>
+                    <!-- END ROW SETTIMANA 2 -->
+                    <div class="row" id="settimana3">
+                        <div class="col-xs-2"><p>settimana 3</p></div>
+                        <div class="col-xs-4">Tracciato 3 prova dal 30 agosto al 1 settembre</div>
+                        <div class="col-xs-2">30-08-2021</div>
+                        <div class="col-xs-2">01-09-2021</div>
+                        <div class="col-xs-1">12L</div>
+                    </div>
+                    <!-- END ROW SETTIMANA 3 -->
+                </div>
+            </div>  
+        </div>  
+        <div class="bg-overlay"></div>
+    </div>
+    <!--VRS SPRINT POPUP -->
+    <div class="custom-model-main_vrss">
+        <div class="custom-model-inner">        
+        <div class="close-btn">×</div>
+            <div class="custom-model-wrap">
+                <div class="pop-up-content-wrap">
+                    <div class="row">
+                        <h4>Tracciati per vrs sprint </h4>
+                    </div>
+                    <div class="row pop-up-top">
+                        <div class="col-xs-2">settimana</div>
+                        <div class="col-xs-4">tracciato</div>
+                        <div class="col-xs-2">inizio</div>
+                        <div class="col-xs-2">fine</div>
+                        <div class="col-xs-1">lunghezza</div>
+                    </div>
+                    <div class="row" id="settimana1_vrss">
+                        <div class="col-xs-2"><p>settimana 1</p></div>
+                        <div class="col-xs-4">Tracciato 1 prova dal 24 al 26 agosto</div>
+                        <div class="col-xs-2">24-08-2021</div>
+                        <div class="col-xs-2">25-08-2021</div>
+                        <div class="col-xs-1">12L</div>
+                    </div>
+                    <!-- END ROW SETTIMANA 1 -->
+                    <div class="row" id="settimana2">
+                        <div class="col-xs-2"><p>settimana 2</p></div>
+                        <div class="col-xs-4">Tracciato 2 prova dal 27 al 29</div>
+                        <div class="col-xs-2">27-08-202</div>
+                        <div class="col-xs-2">29-08-2021</div>
+                        <div class="col-xs-1">12L</div>
+                    </div>
+                    <!-- END ROW SETTIMANA 2 -->
+                    <div class="row" id="settimana3">
+                        <div class="col-xs-2"><p>settimana 3</p></div>
+                        <div class="col-xs-4">Tracciato 3 prova dal 30 agosto al 1 settembre</div>
+                        <div class="col-xs-2">30-08-2021</div>
+                        <div class="col-xs-2">01-09-2021</div>
+                        <div class="col-xs-1">12L</div>
+                    </div>
+                    <!-- END ROW SETTIMANA 3 -->
+                </div>
+            </div>  
+        </div>  
+        <div class="bg-overlay"></div>
+    </div>
+    <!--PURE DRIVING POPUP -->
+    <div class="custom-model-main_pur">
+        <div class="custom-model-inner">        
+        <div class="close-btn">×</div>
+            <div class="custom-model-wrap">
+                <div class="pop-up-content-wrap">
+                    <div class="row">
+                        <h4>Tracciati per pure </h4>
+                    </div>
+                    <div class="row pop-up-top">
+                        <div class="col-xs-2">settimana</div>
+                        <div class="col-xs-4">tracciato</div>
+                        <div class="col-xs-2">inizio</div>
+                        <div class="col-xs-2">fine</div>
+                        <div class="col-xs-1">lunghezza</div>
+                    </div>
+                    <div class="row" id="settimana1_pur">
+                        <div class="col-xs-2"><p>settimana 1</p></div>
+                        <div class="col-xs-4">Tracciato 1 prova dal 24 al 26 agosto</div>
+                        <div class="col-xs-2">24-08-2021</div>
+                        <div class="col-xs-2">25-08-2021</div>
+                        <div class="col-xs-1">12L</div>
+                    </div>
+                    <!-- END ROW SETTIMANA 1 -->
+                    <div class="row" id="settimana2">
+                        <div class="col-xs-2"><p>settimana 2</p></div>
+                        <div class="col-xs-4">Tracciato 2 prova dal 27 al 29</div>
+                        <div class="col-xs-2">27-08-202</div>
+                        <div class="col-xs-2">29-08-2021</div>
+                        <div class="col-xs-1">12L</div>
+                    </div>
+                    <!-- END ROW SETTIMANA 2 -->
+                    <div class="row" id="settimana3">
+                        <div class="col-xs-2"><p>settimana 3</p></div>
+                        <div class="col-xs-4">Tracciato 3 prova dal 30 agosto al 1 settembre</div>
+                        <div class="col-xs-2">30-08-2021</div>
+                        <div class="col-xs-2">01-09-2021</div>
+                        <div class="col-xs-1">12L</div>
+                    </div>
+                    <!-- END ROW SETTIMANA 3 -->
+                </div>
+            </div>  
+        </div>  
+        <div class="bg-overlay"></div>
+    </div>
+
+
+
+    <!----------------------------------- POPUP AUTO -->
+    <!--GT3 CLASS POPUP -->
+    <div class="custom-model-main_gt3car">
+        <div class="custom-model-inner">        
+        <div class="close-btn">×</div>
+            <div class="custom-model-wrap">
+                <div class="pop-up-content-wrap car">
+                        <h4>Auto GT3</h4>
+                    <!-- <div class="row pop-up-top">
+                        <div class="col-xs-2">settimana</div>
+                        <div class="col-xs-4">tracciato</div>
+                        <div class="col-xs-2">inizio</div>
+                        <div class="col-xs-2">fine</div>
+                        <div class="col-xs-1">lunghezza</div>
+                    </div> -->
+                    <div class="row">Audi R8 LMS</div>
+                    <div class="row">BMW M4 GT3</div>
+                    <div class="row">Ferrari 488 GT3</div>
+                    <div class="row">Ford GT GT2/GT3</div>
+                    <div class="row">Ford GT GT3</div>
+                    <div class="row">Lamborghini Huracán GT3 EVO</div>
+                    <div class="row">McLaren MP4-12C GT3</div>
+                    <div class="row">Mercedes AMG GT3</div>
+                    <div class="row">Porsche 911 GT3 R</div>
+                </div>
+            </div>  
+        </div>  
+        <div class="bg-overlay"></div>
+    </div>
+    <!--GTE CLASS POPUP -->
+    <div class="custom-model-main_gtecar">
+        <div class="custom-model-inner">        
+        <div class="close-btn">×</div>
+            <div class="custom-model-wrap">
+                <div class="pop-up-content-wrap car">
+                        <h4>Auto GTE</h4>
+                    <!-- <div class="row pop-up-top">
+                        <div class="col-xs-2">settimana</div>
+                        <div class="col-xs-4">tracciato</div>
+                        <div class="col-xs-2">inizio</div>
+                        <div class="col-xs-2">fine</div>
+                        <div class="col-xs-1">lunghezza</div>
+                    </div> -->
+                    <div class="row">BMW M8 GTE</div>
+                    <div class="row">Chevrolet Corvette C8.R GTE</div>
+                    <div class="row">Ferrari 488 GTE</div>
+                    <div class="row">Ford GTE</div>
+                    <div class="row">Porsche 911 RSR</div>
+                </div>
+            </div>  
+        </div>  
+        <div class="bg-overlay"></div>
+    </div>
+
+
+
+
+
+    </div>
+    <!-- END CONTAINER -->
+
+
+
+
+    <script src="js/weekplan.js"></script>
 </body>
 </html>

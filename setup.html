@@ -1,6 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- DARK MODE -->
+    <script>
+        if (localStorage.getItem('darkmode') === '1') {
+            document.documentElement.classList.add('darkmode');
+        }
+    </script>
+    <style>
+        .darkmode body { background: #222; color: white;}
+        .darkmode .light-only { display: none; }
+        html:not(.darkmode) .dark-only { display: none; }
+    </style>
+
+
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -38,18 +51,23 @@
                     <li><a href="#!">Menu</a>
                         <ul class="nav-dropdown">
                         <li><a href="calculator.html">Fuel Calculator</a></li>
-                        <li><a href="weekplan.html">Week Plan</a></li>
+                        <li><a href="weekplan.html">Week Planner</a></li>
                         <li><a href="setup.html">Setup Tips</a></li>
-                        <li><a href="links.html">Utility</a></li>
-                        <li><a href="sporting.html">Sporting Code</a></li>
-                        <li><a href="ibanner.html">Members</a></li>
-                        <li class="text-right color_icone"><i onclick="toggleTheme('dark');" class="far fa-moon"></i>   
-                            <i onclick="toggleTheme('light');" class="fas fa-sun"></i>
+                        <li><a href="utility.html">Utility</a></li>
+                        <li><a href="members.html">Members</a></li>
+                        <li><a href="liveries.html">Liveries</a></li>
+                        <li><a href="faq.html">Faq</a></li>
+                        <li><a href="https://ir-core-sites.iracing.com/members/pdfs/20210504-iRacing_Sporting_Code_dated_Apr_23_2021.pdf" target="_blank">Sporting Code</a></li>
+                        <li>
+                            <button id="darkToggle">
+                                <span class="dark-only">LIGHT</span>
+                                <span class="light-only">DARK</span>
+                                MODE
+                            </button>
                         </li>
                         </ul>
                     </li>
-                    <!-- <li><a href="#!">Pricing</a></li>
-                    <li><a href="#!">Contact</a></li> -->
+                    <!-- END MENU -->
                 </ul>
             </nav>
         </div>
@@ -58,26 +76,55 @@
 
 
     <div class="container">
-        <div class="row text-center">
+        
+
+        <!-- DARK MODE -->
+        <script>
+            document.querySelector('#darkToggle').addEventListener('click', function() {
+            var wasDarkMode = localStorage.getItem('darkmode') === '1';
+        
+            localStorage.setItem('darkmode', wasDarkMode ? '0' : '1');
+            document.documentElement.classList[wasDarkMode ? 'remove' : 'add']('darkmode');
+            });
+        </script>
+        
+        <div class="row">
             <div class="col-xs-12">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus quod exercitationem dolor dolores, obcaecati tempore molestiae sunt repellat eius? Delectus atque autem incidunt beatae explicabo iure adipisci rerum cum inventore!
-            </div>
-            <div class="col-xs-12">
-                <img src="img/it_brakebias.png" alt="">
+                <img class="logo_img" src="img/logo_setup_tips.png" alt="logo setup">
             </div>
         </div>
         <!-- END ROW -->
-        <div class="row">
-            <div class="col-xs-12 text-center">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, quaerat ipsa rerum mollitia voluptatibus quo ea impedit similique quis omnis nihil cumque tenetur, incidunt minima autem consequuntur officia saepe tempore?
+        <div class="row text-center">
+            <div class="col-xs-12 text_top">
+                
+                <h4>
+                    In iRacing, come nelle gare reali, i setups fanno la differenza. Esistono diversi siti per la condivisione di setup, ed altri che offrono setup  a pagamento già fatti da professionisti. Lo stile di guida rimane comunuqe una cosa personale e potreste trovarvi ad effettuare diverse modifiche ai setup che userete. Questi sono dei suggerimenti generici per i problemi che potreste riscontrare alla guida come sovrasterzo, sottosterzo e bilanciamento di frenata. Fare un setup è complicato ma spesso basta modificare poco qualche settaggio per guadagnare diversi decimi e guidare più tranquilli.
+                </h4>
             </div>
+
             <div class="col-xs-12 text-center">
                 <img src="img/it_underover.png" alt="">
             </div>
+            
+        </div>
+        <!-- END ROW -->
+        <div class="row">
+            <div class="col-xs-12 text-center text_bottom">
+                <h4>
+                    Il bilanciamento di frenata è fondamentale per un corretto ingresso in curva, e quindi un'uscita più veloce possibile. Il brake bias è soggettivo e può cambiare a seconda del pilota, dell'auto, della curva e dell'usura gomme. Qui un po di suggerimenti generici per aiutarvi a scegliere il miglior bilanciamento per voi.
+                </h4>
+            </div>
+            <div class="col-xs-12 text-center">
+                <img src="img/it_brakebias.png" alt="">
+            </div>
+            
         </div>
         <!-- END ROW -->
     </div>
     <!-- END CONTAINER -->
     <script src="js/setup.js"></script>
+
+    
+
 </body>
 </html>

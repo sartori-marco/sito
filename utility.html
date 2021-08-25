@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- DARK MODE -->
+    <script>
+        if (localStorage.getItem('darkmode') === '1') {
+            document.documentElement.classList.add('darkmode');
+        }
+    </script>
+    <style>
+        .darkmode body { background: #222; color: white;}
+        .darkmode .light-only { display: none; }
+        html:not(.darkmode) .dark-only { display: none; }
+    </style>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CDN FONT AWESOME -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- CDN JQUERY -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <!-- CDN  BOOTSTRAP -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+    <!-- FAVICON -->
+    <link rel="SHORTCUT ICON" href="https://img.icons8.com/color/48/000000/f1-race-car-top-veiw.png" />
+    <link rel="icon" href="https://img.icons8.com/color/48/000000/f1-race-car-top-veiw.png" type="image/ico" />
+    <!-- LINK CSS -->
+    <link rel="stylesheet" href="css/links.css">
+    <title>Links</title>
+</head>
+<body>
+
+    <section class="navigation">
+        <div class="nav-container">
+            <div class="brand">
+                <strong><a href="index.html">simmar formula racing</a></strong>
+            </div>
+            <nav>
+                <div class="nav-mobile">
+                    <a id="nav-toggle" href="#!"><span></span></a>
+                </div>
+                <ul class="nav-list">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="">Contatti</a></li>
+                    <li>
+                        <a href="https://www.buymeacoffee.com/sartorimarco">Dona
+                        </a>
+                    </li>
+                    <li><a href="#!">Menu</a>
+                        <ul class="nav-dropdown">
+                        <li><a href="calculator.html">Fuel Calculator</a></li>
+                        <li><a href="weekplan.html">Week Plan</a></li>
+                        <li><a href="setup.html">Setup Tips</a></li>
+                        <li><a href="links.html">Utility</a></li>
+                        <li><a href="sporting.html">Sporting Code</a></li>
+                        <li><a href="ibanner.html">Members</a></li>
+                        <li>
+                            <button id="darkToggle">
+                                <span class="dark-only">LIGHT</span>
+                                <span class="light-only">DARK</span>
+                                MODE
+                            </button>
+                        </li>
+                        
+                        </ul>
+                    </li>
+                    <!-- <li><a href="#!">Pricing</a></li>
+                    <li><a href="#!">Contact</a></li> -->
+                </ul>
+            </nav>
+        </div>
+    </section>
+
+    
+
+
+    <div class="container">
+        <!-- DARK MODE -->
+        <script>
+            document.querySelector('#darkToggle').addEventListener('click', function() {
+            var wasDarkMode = localStorage.getItem('darkmode') === '1';
+        
+            localStorage.setItem('darkmode', wasDarkMode ? '0' : '1');
+            document.documentElement.classList[wasDarkMode ? 'remove' : 'add']('darkmode');
+            });
+        </script>
+        
+        <div class="row text-center">
+            <div class="col-xs-12">
+                <img class="logo_img" src="img/logo_utility.png" alt="">
+            </div>
+        </div>
+        <div class="row text_top">
+            <h4>
+                Esistono tanti software che vi possono aiutare nella vostra esperienza con iRacing ed altri simulatori. Si va dagli overlay, all'ingegnere di pista, al miglioramento del force feedback del volante e tanto altro. Qui elencheremo le applicazioni principali più usate dalla community e da noi, quasi tutte free, con i relativi link per il download. Speriamo possano esservi utili!
+            </h4>
+        </div>
+        <!-- END ROW -->
+
+
+        <div class="row">
+            <h3>
+                Crewchief
+            </h3>
+            <h5>
+                Free-<a href="https://thecrewchief.org/" target="_blank">Link</a>
+            </h5>
+            <div class="col-xs-12 text-center">
+                <img src="img/crewchief.png" alt="img_crewchief">
+            </div>
+            <div class="col-xs-12">
+                <p>
+                    Non riuscirete più a fare a meno del vostro ingegnere di pista. Crewchief è non solo uno spotter, ma un vero e proprio ingegnere di pista che vi comunicherà tempi, benzina, vi terrà concentrati durante la gara e vi aiuterà nelle fasi di sorpasso. Funziona con quasi tutti i racingsims disponibili, la versione base è in inglese ma è disponibile la localizzazione in italiano (purtroppo non perfetta). Oltretutto Crewchief è altamente personalizzabile a seconda delle proprie esigenze.
+                </p>
+            </div>
+        </div>
+        <!-- END ROW -->
+        <div class="row">
+            <h3>
+                SimHub
+                
+            </h3>
+            <h5>Free-<a href="https://www.simhubdash.com/" target="_blank">Link</a></h5>
+            <div class="col-xs-12 text-center">
+                <img src="img/simhub.png" alt="img_simhub">
+            </div>
+            <div class="col-xs-12">
+                <p>
+                    Simhub ha un’infinità di funzioni. Potete usarlo per creare o scaricare degli overlay in gioco, usarlo come finestra in un secondo desktop o in un display su volante, telefono, ovunque. Ci sono tantissime risorse sul web disponibili. Simhub può anche controllare un arduino a cui potete collegare led, display, tasti, qualsiasi cosa vi venga in mente. Può anche controllare i motorini per aggiungere la vibrazione alla vostra postazione di guida.
+                    Simhub è fondamentalmente gratis ma con una piccola donazione di pochi euro potete rimuovere la loading screen e usare arduino con più fps, oltre che finanziare un ottimo progetto.
+                </p>
+            </div>
+        </div>
+        <!-- END ROW -->
+        <div class="row">
+            <h3>
+                Trading Paints
+            </h3>
+            <h5>Free-<a href="https://www.tradingpaints.com" target="_blank">Link</a></h5>
+            <div class="col-xs-12 text-center">
+                <img src="img/trading.png" alt="img_tradingpaints">
+            </div>
+            <div class="col-xs-12">
+                <p>
+                    iRacing purtroppo non eccelle sulle livree e la personalizzazione vetture, ma qui viene in vostro aiuto Trading Paints. Prima che ve lo chiediate è usato dal 99% degli utenti iRacing ed è sicurissimo.
+                    Trading Paints si collega al vostro account, tramite il sito potete scegliere tra migliaia di livree dalle più serie alle più buffe e tramite un minuscolo software da lasciare in esecuzione durante il gioco vengono scaricate tutte le livree delle auto in gioco. Fondamentale!
+                </p>
+            </div>
+        </div>
+        <!-- END ROW -->
+        <div class="row">
+            <h3>
+                RaceLab
+            </h3>
+            <h5>Base free - pro 40€/anno-<a href="https://racelab.app/" target="_blank">Link</a></h5>
+            <div class="col-xs-12 text-center">
+                <img src="img/racelab.png" alt="img_racelab">
+            </div>
+            <div class="col-xs-12">
+                <p>
+                    Gli overlay su iRacing sono fondamentali e Racelab ne offre di ottima qualità. Avrete visto sicuramente Racelab usato da diversi youtuber. La versione base free offre classifiche relative e non, fuel calculator, un pannello con rpm marce e speed e altre chicche, parzialmente personalizzabili. Con la versione pro ovviamente si sblocca ogni overlay ed ogni tipo di personalizzazione. Graficamente eccellente!
+                </p>
+            </div>
+        </div>
+        <!-- END ROW -->
+        <div class="row">
+            <h3>
+                Kapps
+            </h3>
+            <h5>2$ al mese – free con amazon prime-<a href="https://kapps.kutu.ru/" target="_blank">Link</a></h5>
+            <div class="col-xs-12 text-center">
+                <img src="img/kapps.png" alt="img_kapps">
+            </div>
+            <div class="col-xs-12">
+                <p>
+                    Kapps è un altro ottimo fornitore di overlay. Classifiche, fuel calc, input telemetry, mappa, e tutto quello che volete altamente personalizzabile. Kapps nasce a pagamento, ma con Amazon prime facendo una sub ogni mese al loro canale Twitch diventa free.
+                </p>
+            </div>
+        </div>
+        <!-- END ROW -->
+        <div class="row">
+            <h3>
+                irFFB e vjoy
+            </h3>
+            <h5>Free-<a href="https://github.com/nlp80/irFFB/wiki https://sourceforge.net/projects/vjoystick/" target="_blank">Link</a></h5>
+            <div class="col-xs-12 text-center">
+                <img src="img/irffb.png" alt="img_irffb">
+            </div>
+            <div class="col-xs-12">
+                <p>
+                    Questa coppia di software vi permette di migliorare nettamente la vostra esperienza iRacing con diverse migliorie riguardo al FFB. Purtroppo il nostro sim non eccelle da questo punto di vista, e irFFB vi permette di migliorare la qualità del FFB ed inserire alcuni “effetti” non presenti nel gioco. Sovrasterzo e sottosterzo saranno molto più gestibili e la vostra esperienza di gioco migliorerà nettamente.
+                </p>
+            </div>
+        </div>
+        <!-- END ROW -->
+        <div class="row">
+            <h3>
+                United telemetry data
+            </h3>
+            <h5>Free (beta)-<a href="https://www.unitedracingdata.com/" target="_blank">Link</a></h5>
+            <div class="col-xs-12 text-center">
+                <img src="img/telemetry.png" alt="img_telemetry">
+            </div>
+            <div class="col-xs-12">
+                <p>
+                    Una telemetria a portata di tutti, ancora in fase beta quindi alcune funzioni potrebbero diventare a pagamento in futuro. Scaricate il software e lasciatelo in esecuzione, attivate la telemetria durante i vostri giri (alt+L di default), e la telemetria verrà registrata.
+                    Successivamente potrete analizzare i vostri giri migliori e compararli con quelli di altri piloti e dei vostri amici. Interfaccia semplice ed intuitiva, vi permetterà di limare molto dai vostri tempi.
+                </p>
+            </div>
+        </div>
+        <!-- END ROW -->
+        <div class="row">
+            <h3>
+                iRacing Manager
+            </h3>
+            <h5>Free-<a href="https://members.iracing.com/jforum/posts/list/3633292.page" target="_blank">Link</a></h5>
+            <div class="col-xs-12 text-center">
+                <img src="img/irmanager.png" alt="img_irmanager">
+            </div>
+            <div class="col-xs-12">
+                <p>
+                    Siete stufi di avviare decine di applicazioni prima di giocare? Questa piccola ma fondamentale app vi aiuterà aprendo e chiudendo ogni programma che vi serve se volete apertura e chiusura automatica con iRacing, partenza minimizzata e delay di apertura. Utilissimo!
+                </p>
+            </div>
+        </div>
+        <!-- END ROW -->
+        <!-- BOTTONE FIXED PER TORNARE IN CIMA -->
+        <span class="on_start" onclick="topFunction()" id="toTop">
+            <a href="#!"><i class="fas fa-chevron-up"></i></a>
+        </span>
+    </div>
+    <!-- END CONTAINER -->
+    <footer>
+        <div class="col-xs-12 text-center">
+            Sito disegnato e programmato interamente da Luca Simonetti e Marco Sartori. Se ti piace il progetto sostienici con una donazione :)
+        </div>
+    </footer>
+    <script src="js/links.js"></script>
+</body>
+</html>

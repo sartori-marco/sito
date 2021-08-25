@@ -1,6 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- DARK MODE -->
+    <script>
+        if (localStorage.getItem('darkmode') === '1') {
+            document.documentElement.classList.add('darkmode');
+        }
+    </script>
+    <style>
+        .darkmode body { background: #222; color: white;}
+        .darkmode .light-only { display: none; }
+        html:not(.darkmode) .dark-only { display: none; }
+    </style>
+
+    <!-- TRANSLATE -->
+
+    
+
+
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,7 +33,10 @@
     <link rel="icon" href="https://img.icons8.com/color/48/000000/f1-race-car-top-veiw.png" type="image/ico" />
     <title>Home</title>
 </head>
-<body class="body_color">
+<body class="body_color light">
+    
+
+
 
     <section class="navigation">
         <div class="nav-container">
@@ -29,7 +49,7 @@
                 </div>
                 <ul class="nav-list">
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="">Contatti</a></li>
+                    <li><a href="contact.html">Contatti</a></li>
                     <li>
                         <a href="https://www.buymeacoffee.com/sartorimarco">Dona
                         </a>
@@ -37,18 +57,43 @@
                     <li><a href="#!">Menu</a>
                         <ul class="nav-dropdown">
                         <li><a href="calculator.html">Fuel Calculator</a></li>
-                        <li><a href="weekplan.html">Week Plan</a></li>
+                        <li><a href="weekplan.html">Week Planner</a></li>
                         <li><a href="setup.html">Setup Tips</a></li>
-                        <li><a href="links.html">Utility</a></li>
-                        <li><a href="sporting.html">Sporting Code</a></li>
-                        <li><a href="ibanner.html">Members</a></li>
-                        <li class="text-right color_icone"><i onclick="toggleTheme('dark');" class="far fa-moon"></i>   
-                            <i onclick="toggleTheme('light');" class="fas fa-sun"></i>
+                        <li><a href="utility.html">Utility</a></li>
+                        <li><a href="members.html">Members</a></li>
+                        <li><a href="liveries.html">Liveries</a></li>
+                        <li><a href="faq.html">Faq</a></li>
+                        <li><a href="https://ir-core-sites.iracing.com/members/pdfs/20210504-iRacing_Sporting_Code_dated_Apr_23_2021.pdf" target="_blank">Sporting Code</a></li>
+                        <li>
+                                <button id="darkToggle">
+                                    <span class="dark-only">LIGHT</span>
+                                    <span class="light-only">DARK</span>
+                                    MODE
+                                </button>
                         </li>
                         </ul>
                     </li>
-                    <!-- <li><a href="#!">Pricing</a></li>
-                    <li><a href="#!">Contact</a></li> -->
+                    <!-- END MENU -->
+                    <li>
+                        <a href="#!" class="lingua">Lingua</a>
+                        <a href="#!" class="lingua_ita">
+                            <img src="img/flag_ita.png" alt="bandiera italia">
+                        </a>
+                        <!-- / ITA -->
+                        <a href="#!" class="lingua_usa">
+                            <img src="img/flag_usauk.png" alt="bandiera usa">
+                        </a>
+                        <!-- / USA -->
+
+                        <ul class="nav-dropdown drop-img">
+                            <li>
+                                <a href="#!"><img src="img/flag_ita.png" alt="bandiera italia"></a>
+                            </li>
+                            <li>
+                                <a href="#!"><img src="img/flag_usauk.png" alt="bandiera usa"></a>
+                            </li>
+                        </ul>
+                    </li>
                 </ul>
             </nav>
         </div>
@@ -60,15 +105,25 @@
 
 
     <div class="container">
+        <!-- DARK MODE -->
+        <script>
+            document.querySelector('#darkToggle').addEventListener('click', function() {
+            var wasDarkMode = localStorage.getItem('darkmode') === '1';
+        
+            localStorage.setItem('darkmode', wasDarkMode ? '0' : '1');
+            document.documentElement.classList[wasDarkMode ? 'remove' : 'add']('darkmode');
+            });
+        </script>
+
         <div class="row text-center">
             <div class="col-xs-12 col-sm-6 grow">
                 <a href="calculator.html">
-                    <img src="img/box_fuelcalc_it_light.png" alt="logo_fuelcalc">
+                    <img src="img/box_fuelcalculator.png" alt="logo fuelcalc">
                 </a>
             </div>
             <div class="col-xs-12 col-sm-6 grow">
                 <a href="weekplan.html">
-                    <img src="img/box_weekplan_it_light.png" alt="logo_weekplanner">
+                    <img src="img/box_weekplanner.png" alt="logo weekplanner">
                 </a>
             </div>
         </div>
@@ -86,26 +141,26 @@
         <!-- END ROW -->
         <div class="row bottoni text-center">
             <div class="col-xs-12 col-sm-4 grow">
-                <a href="setup.html" target="_blank">
-                    <img src="img/box_setuptips_it_light.png" alt="">
+                <a href="setup.html">
+                    <img src="img/box_setuptips.png" alt="logo setup">
                 </a>
             </div>
             <div class="col-xs-12 col-sm-4 grow">
-                <a href="links.html"> 
-                    <img src="img/box_utility_it_light.png" alt="">
+                <a href="utility.html"> 
+                    <img src="img/box_utility.png" alt="logo utility">
                 </a>
             </div>
             <div class="col-xs-12 col-sm-4 grow">
-                <a href="ibanner.html"> 
-                    <img src="img/box_members_it_light.png" alt="">
+                <a href="members.html"> 
+                    <img src="img/box_members.png" alt="logo members">
                 </a>
             </div>
         </div>
         <!-- END ROW -->
         <div class="row text-center">
-            <div class="col-xs-12 pd_20 grow">
+            <div class="col-xs-12 donate pd_20 grow">
                 <a href="https://www.buymeacoffee.com/sartorimarco">
-                    <img src="img/box_donate_it_light.png" alt="">
+                    <img src="img/box_donate.png" alt="logo donate">
                 </a>
             </div>
         </div>
@@ -115,29 +170,55 @@
 
 
         <div class="row text-center">
-            <div class="col-xs-12 col-sm-4 grow">
-                <a href="https://ir-core-sites.iracing.com/members/pdfs/20201028-iRacing-Sporting-Code_dated_Oct_28_2020.pdf" target="_blank"> 
-                    <img src="img/box_sportingcode_it_light.png" alt="">
-                </a>
-            </div>
-            <div class="col-xs-12 col-sm-4 grow">
-                <a href="https://forums.iracing.com/" target="_blank"> 
-                    <img src="img/box_forum_it_light.png" alt="">
+            <div class="col-xs-12 col-sm-8 grow">
+                <a href="liveries.html"> 
+                    <img src="img/box_liveries.png" alt="logo livree">
                 </a>
             </div>
 
             <div class="col-xs-12 col-sm-4 grow">
-                <a href=""> 
-                    <img src="img/box_lastbox_it_light.png" alt="">
+                <a href="contact.html"> 
+                    <img src="img/box_contacts.png" alt="logo contatti">
                 </a>
             </div>
         </div>
         <!-- END ROW -->
+        <div class="row text-center pd_20">
+            <div class="col-xs-12 col-sm-4 grow">
+                <a href="faq.html"> 
+                    <img src="img/box_faq.png" alt="logo forum">
+                </a>
+            </div>
+
+            <div class="col-xs-12 col-sm-8 grow">
+                <a href="https://ir-core-sites.iracing.com/members/pdfs/20210504-iRacing_Sporting_Code_dated_Apr_23_2021.pdf" target="_blank"> 
+                    <img src="img/box_sportingcodexl.png" alt="logo sporting code">
+                </a>
+            </div>
+            
+        </div>
+        <!-- END ROW -->
+
+        
 
 
         <div class="row text-center">
-            <div class="col-xs-12 pd_20">
-                    <img src="img/box_news_it_light.png" alt="">
+            <div class="col-xs-12">
+                <div class="slider" id="main-slider"><!-- outermost container element -->
+                    <div class="slider-wrapper"><!-- innermost wrapper element -->
+                        <div class="slide">
+                            <img src="img/slidetest.png" alt="">
+                        </div>
+                        <div class="slide">
+                            <img src="img/slidetest2.png" alt="">
+                        </div>
+                        <div class="slide">
+                            <img src="img/slidetest3.png" alt="">
+                        </div>
+                        
+                    </div>
+                </div>	
+
             </div>
         </div>
         <!-- END ROW -->
@@ -152,6 +233,6 @@
     
 
     <script src="js/home.js"></script>
-
+    
 </body>
 </html>

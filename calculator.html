@@ -1,6 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- DARK MODE -->
+    <script>
+        if (localStorage.getItem('darkmode') === '1') {
+            document.documentElement.classList.add('darkmode');
+        }
+    </script>
+    <style>
+        .darkmode body { background: #222; color: white;}
+        .darkmode .light-only { display: none; }
+        html:not(.darkmode) .dark-only { display: none; }
+    </style>
+    
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -21,7 +33,7 @@
     <section class="navigation">
         <div class="nav-container">
             <div class="brand">
-                <strong><a href="index.html">simmar formula racing</a></strong>
+                <strong><a href="index.html">fuel calculator</a></strong>
             </div>
             <nav>
                 <div class="nav-mobile">
@@ -37,35 +49,56 @@
                     <li><a href="#!">Menu</a>
                         <ul class="nav-dropdown">
                         <li><a href="calculator.html">Fuel Calculator</a></li>
-                        <li><a href="weekplan.html">Week Plan</a></li>
+                        <li><a href="weekplan.html">Week Planner</a></li>
                         <li><a href="setup.html">Setup Tips</a></li>
-                        <li><a href="links.html">Utility</a></li>
-                        <li><a href="sporting.html">Sporting Code</a></li>
-                        <li><a href="ibanner.html">Members</a></li>
-                        <li class="text-right color_icone"><i onclick="toggleTheme('dark');" class="far fa-moon"></i>   
-                            <i onclick="toggleTheme('light');" class="fas fa-sun"></i>
+                        <li><a href="utility.html">Utility</a></li>
+                        <li><a href="members.html">Members</a></li>
+                        <li><a href="liveries.html">Liveries</a></li>
+                        <li><a href="faq.html">Faq</a></li>
+                        <li><a href="https://ir-core-sites.iracing.com/members/pdfs/20210504-iRacing_Sporting_Code_dated_Apr_23_2021.pdf" target="_blank">Sporting Code</a></li>
+                        <li>
+                            <button id="darkToggle">
+                                <span class="dark-only">LIGHT</span>
+                                <span class="light-only">DARK</span>
+                                MODE
+                            </button>
                         </li>
                         </ul>
                     </li>
-                    <!-- <li><a href="#!">Pricing</a></li>
-                    <li><a href="#!">Contact</a></li> -->
+                    <!-- END MENU -->
                 </ul>
             </nav>
         </div>
     </section>
 
-
-    <div class="container text-center">
-        <div class="row">
-
+    <div class="container_small margine_top_cs">
+        <!-- DARK MODE -->
+        <script>
+            document.querySelector('#darkToggle').addEventListener('click', function() {
+            var wasDarkMode = localStorage.getItem('darkmode') === '1';
+        
+            localStorage.setItem('darkmode', wasDarkMode ? '0' : '1');
+            document.documentElement.classList[wasDarkMode ? 'remove' : 'add']('darkmode');
+            });
+        </script>
+        <div class="row text_description">
+            <div class="col-xs-12 col-sm-6 text-left" style="line-height: 5;">
+                Race duration based on
+            </div>
+            <div class="col-xs-12 col-sm-6 text-right">
+                <div class="bottoni_calc">
+                    <button id="lengthBtn" onclick="clickLength()">time</button>
+                    <button id="lapsBtn" onclick="clickLaps()">laps</button>
+                </div>
+                <!-- END BOTTONI CALC -->
+            </div>
         </div>
         <!-- END ROW -->
-        <div class="bottoni_calc">
-            <button id="lengthBtn" onclick="clickLength()">time</button>
-            <button id="lapsBtn" onclick="clickLaps()">laps</button>
-        </div>
-        <!-- END BOTTONI CALC -->
+    </div>
+    <!-- END CONTAINER SMALL -->
 
+    
+    <div class="container text-center">
         <div id="calc_time">
             <!-- END DIV CALC TIME -->
             <table>
@@ -75,7 +108,7 @@
                 <tr class="border_tr">
                     <td class="text-right">
                         <input type="text" id="race_hr" class="wd_15" placeholder="Hr">
-                        <input type="text" id="race_min" class="wd_15" placeholder="Min">
+                        <input type="text" id="race_min" class="wd_15" placeholder="Min" style="text-align:right">
                     </td>
                     <td></td>
                 </tr>
@@ -136,15 +169,18 @@
                     <td class="result_table" id="race_duration"></td>
                 </tr>
             </table>
-            <div class="row bottoni">
-                <div class="col-xs-12 col-sm-6">
-                    <button id="calcola" onclick="calculatorLength()">calcola</button>
+            <div class="container_small">
+                <div class="row bottoni">
+                    <div class="col-xs-12 col-sm-6 text-left">
+                        <button id="calcola" onclick="calculatorLength()">calculate</button>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 text-right">
+                        <button id="reset" onclick="resetTime()">reset</button>
+                    </div>
                 </div>
-                <div class="col-xs-12 col-sm-6">
-                    <button id="reset" onclick="resetTime()">reset</button>
-                </div>
+                <!-- END ROW BOTTONI CALCOLA -->
             </div>
-            <!-- END ROW BOTTONI CALCOLA -->
+            <!-- END CONTAINER SMALL -->
         </div>
         <!-- END DIV CALC PER TIME -->
 
@@ -216,23 +252,21 @@
                     <td class="result_table" id="race_duration_lp"></td>
                 </tr>
             </table>
-            <div class="row bottoni" id="calc_laps">
-                <div class="col-xs-12 col-sm-6">
-                    <button id="calcola" onclick="calculatorLaps()">calcola</button>
-                </div>
-                <div class="col-xs-12 col-sm-6">
-                    <button id="reset" onclick="resetLaps()">reset</button>
+            
+            <div class="container_small">
+                <div class="row bottoni" id="calc_laps">
+                    <div class="col-xs-12 col-sm-6 text-left">
+                        <button id="calcola" onclick="calculatorLaps()">calculate</button>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 text-right">
+                        <button id="reset" onclick="resetLaps()">reset</button>
+                    </div>
                 </div>
             </div>
+            <!-- END CONTAINER SMALL -->
             <!-- END ROW BOTTONI CALCOLA -->
         </div>
         <!-- END DIV CALC LAPS -->
-
-
-        
-
-
-
 
 
     </div>
